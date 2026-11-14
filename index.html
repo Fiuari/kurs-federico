@@ -26,8 +26,8 @@
                     <li><a href="#" class="white">Home</a></li>
                     <li><a href="#" class="white">About</a></li>
                     <li><a href="#" class="white">Rooms</a></li>
-                    <li><a href="#" class="white">Restaurant</a></li>
-                    <li><a href="#" class="white">Conference Hall</a></li>
+                    <li><a href="facilities/restaurant.html" class="white">Restaurant</a></li>
+                    <li><a href="facilities/conference-hall.html" class="white">Conference Hall</a></li>
                     <li><a href="#" class="white">Contacts</a></li>
                 </ul>
             </nav>
@@ -310,50 +310,48 @@
                     </div>
                 </div>
 
-                <section class="amenities">
+                <section id="facilities" class="amenities" aria-label="Hotel facilities">
+                    <!-- facility-cards:start -->
                     <article class="accordion-item animate-on-scroll">
                         <header>
                             <div class="img-cell">
-                                <img class="accordion-icon" src="assets/img/facilrestaurant.png" alt="Ice Restaurant icon">
+                                <img class="accordion-icon" src="assets/img/facilrestaurant.png" alt="Daylit dining room with a long counter and tables along the windows">
                             </div>
                             <span class="number">01</span>
-                            <span class="title">Ice Restaurant</span>
-                            <p>The hotel’s exclusive infrastructure is complemented by the unique atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and live music will set you for the correct mood.</p>
-                            <button class="accordion-toggle" aria-expanded="false">
-                                <img src="assets/img/icons/right.png" alt="Open restaurant details">
+                            <a class="title facility-link" href="facilities/restaurant.html">Ice Restaurant</a>
+                            <p id="restaurant-summary">A chef’s menu, an extensive wine list and live music set the mood for dinner at BankHotel. <a class="facility-details" href="facilities/restaurant.html">View details</a></p>
+                            <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="restaurant-summary" aria-label="Ice Restaurant overview">
+                                <img src="assets/img/icons/right.png" alt="">
                             </button>
                         </header>
-
                     </article>
-
                     <article class="accordion-item animate-on-scroll">
                         <header>
                             <div class="img-cell">
-                                <img class="accordion-icon" src="assets/img/hall.jpg" alt="Conference hall icon">
+                                <img class="accordion-icon" src="assets/img/hall.jpg" alt="Open interior with lounge seating and floor-to-ceiling windows">
                             </div>
                             <span class="number">02</span>
-                            <span class="title">Conference hall</span>
-                            <p>The spacious conference hall is equipped with modern technology and comfortable seating, making it ideal for business meetings, seminars, and large-scale events. Professional service ensures every detail is taken care of.</p>
-                            <button class="accordion-toggle" aria-expanded="false">
-                                <img src="assets/img/icons/right.png" alt="Open conference hall details">
+                            <a class="title facility-link" href="facilities/conference-hall.html">Conference Hall</a>
+                            <p id="conference-hall-summary">The conference hall brings modern technology and comfortable seating together for business meetings, seminars and larger events. <a class="facility-details" href="facilities/conference-hall.html">View details</a></p>
+                            <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="conference-hall-summary" aria-label="Conference Hall overview">
+                                <img src="assets/img/icons/right.png" alt="">
                             </button>
                         </header>
                     </article>
-
                     <article class="accordion-item animate-on-scroll">
                         <header>
                             <div class="img-cell">
-                                <img class="accordion-icon" src="assets/img/facilbar.png" alt="Wine Bar Reserve icon">
+                                <img class="accordion-icon" src="assets/img/facilbar.png" alt="Bar counter lined with wooden stools and shelves of bottles">
                             </div>
                             <span class="number">03</span>
-                            <span class="title">Wine Bar "Reserve"</span>
-                            <p>The hotel’s refined leisure is enriched by the cozy atmosphere of the Wine Bar “Reserve”. Curated wine selection, signature cocktails, and elegant design will set you for the perfect evening.</p>
-                            <button class="accordion-toggle" aria-expanded="false">
-                                <img src="assets/img/icons/right.png" alt="Open wine bar details">
+                            <a class="title facility-link" href="facilities/wine-bar.html">Wine Bar “Reserve”</a>
+                            <p id="wine-bar-summary">A curated wine selection, signature cocktails and a relaxed bar setting make Reserve a place to spend the evening. <a class="facility-details" href="facilities/wine-bar.html">View details</a></p>
+                            <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="wine-bar-summary" aria-label="Wine Bar “Reserve” overview">
+                                <img src="assets/img/icons/right.png" alt="">
                             </button>
                         </header>
-
                     </article>
+                    <!-- facility-cards:end -->
                 </section>
             </section>
 

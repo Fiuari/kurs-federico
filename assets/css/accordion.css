@@ -20,3 +20,12 @@
 .accordion-item.open .accordion-toggle img {
   transform: rotate(90deg);
 }
+
+
+.amenities .facility-link, .amenities .facility-details {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .15em;
+}
+.amenities .facility-details { display: inline-block; }
