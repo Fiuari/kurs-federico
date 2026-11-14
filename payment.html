@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo payment · BankHotel</title>
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/room.css">
+  <link rel="stylesheet" href="assets/css/booking.css">
+  <script defer src="assets/js/booking-catalog.js"></script>
+  <script defer src="assets/js/booking-common.js"></script>
+  <script defer src="assets/js/payment.js"></script>
+</head>
+<body class="room-page reservation-page">
+  <header class="masthead"><a class="brand" href="index.html">BankHotel</a><nav class="room-nav" aria-label="Main navigation"><a href="index.html#rooms">Rooms</a></nav></header>
+  <main class="payment-wrap">
+    <a class="back" href="booking.html" id="back">← Back to booking</a>
+    <h1>Online <em>payment</em></h1>
+    <section class="payment-card" aria-labelledby="summary-title">
+      <h2 id="summary-title">Reservation summary</h2>
+      <p class="receipt" id="payment-summary"></p>
+      <p class="note">Demo payment. No card details are required.</p>
+      <button id="pay" class="primary" type="button" disabled>Pay</button>
+    </section>
+  </main>
+  <dialog id="confirmation" aria-labelledby="success-title">
+    <h2 id="success-title">Booking confirmed</h2>
+    <p class="receipt"></p><p class="note">Demo confirmation. No actual room is reserved or payment collected.</p>
+    <a class="primary" href="index.html#rooms">Back to rooms</a>
+  </dialog>
+</body>
+</html>

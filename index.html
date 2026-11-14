@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/burgermenu.css">
     <link rel="stylesheet" href="assets/css/swiper.css">
     <link rel="stylesheet" href="assets/css/accordion.css">
+    <link rel="stylesheet" href="assets/css/booking-entry.css">
 </head>
 <body>
     <div class="container">
@@ -23,12 +24,12 @@
             <div class="mobile-menu">
             <nav class="nav">
                 <ul class="main-menu">
-                    <li><a href="#" class="white">Home</a></li>
-                    <li><a href="#" class="white">About</a></li>
-                    <li><a href="#" class="white">Rooms</a></li>
+                    <li><a href="index.html" class="white">Home</a></li>
+                    <li><a href="#about" class="white">About</a></li>
+                    <li><a href="#rooms" class="white">Rooms</a></li>
                     <li><a href="facilities/restaurant.html" class="white">Restaurant</a></li>
                     <li><a href="facilities/conference-hall.html" class="white">Conference Hall</a></li>
-                    <li><a href="#" class="white">Contacts</a></li>
+                    <li><a href="#contacts" class="white">Contacts</a></li>
                 </ul>
             </nav>
             <div class="contact">
@@ -36,9 +37,9 @@
             </div>
             <p class="adress-h white">8 Lystopadovoho Chynu, Lviv</p>
             <ul class="socials-h">
-                <li><a href="#" class="white">Facebook</a></li>
-                <li><a href="#" class="white">Instagram</a></li>
-                <li><a href="#" class="white">Twitter</a></li>
+                <li><a href="404.html" class="white">Facebook</a></li>
+                <li><a href="404.html" class="white">Instagram</a></li>
+                <li><a href="404.html" class="white">Twitter</a></li>
             </ul>
             </div>
         </header>
@@ -53,38 +54,26 @@
                         <p class="white">Since 1973</p>
                     </div>
                      <p class="description white animate-on-scroll">The luxurious hotel in the most beautiful European city with an exclusive restaurant, conference-hall, and art-bar.</p>
-                    <button class="octagon poly-stroke-green animate-on-scroll" aria-label="Book room">
+                    <a href="booking.html" class="octagon poly-stroke-green animate-on-scroll" aria-label="Book room">
                         <svg viewBox="0 0 100 100" class="polygon">
                             <polygon points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30" />
                         </svg>
                         <img class="down animate-on-scroll" src="assets/img/icons/down.png" alt="Scroll down">
-                    </button>
+                    </a>
                 </div>
                 <div class="enum-wrapper animate-on-scroll">
-                    <form class="booking-form">
+                    <form class="booking-form" action="booking.html" method="get">
                         <div class="form-group">
-                        <select id="check-in" name="check-in" class="dropdown white">
-                            <option value="1">Check in</option>
-                            <option value="2">Rooms</option>
-                            <option value="3">Restaurant</option>
-                            <option value="4">Conference Hall</option>
-                            <option value="5">Wine Bar</option>
-                        </select>
+                        <label class="dropdown white home-date">Check in<input type="date" name="check-in" aria-label="Check in"></label>
                         </div>
 
                         <div class="form-group">
-                        <select id="check-out" name="check-out" class="dropdown white">
-                            <option value="1">Check out</option>
-                            <option value="2">Rooms</option>
-                            <option value="3">Restaurant</option>
-                            <option value="4">Conference Hall</option>
-                            <option value="5">Wine Bar</option>
-                        </select>
+                        <label class="dropdown white home-date">Check out<input type="date" name="check-out" aria-label="Check out"></label>
                         </div>
 
                         <button class="booking">Book room</button>
                     </form>
-                    <button class="decagon poly-booking">
+                    <a href="booking.html" class="decagon poly-booking">
                         <svg viewBox="0 0 100 100" class="polygon">
                             <polygon points="
                                 50,5 
@@ -100,19 +89,19 @@
                         </svg>
 
                         <p>Book room</p>
-                    </button>
+                    </a>
                 </div>
 
                 <div class="inf-wrapper animate-on-scroll">
                     <div>
-                        <a tel:+380322975020 class="yellow">+38 032 297 50 20</a>
+                        <a href="tel:+380322975020" class="yellow">+38 032 297 50 20</a>
                         <address class="white">8 Lystopadovoho Chynu, Lviv</address>
                     </div>
                     <p class="inf white">Art & Congress <br><i>hall</i></p>
                 </div>
             </section>
 
-            <section class="about-us-section primary-color-bckg">
+            <section id="about" class="about-us-section primary-color-bckg">
                 <div class="about-wrapper p30">
                     <img src="assets/img/aboutusone.png" alt="About Bank Hotel" class="animate-on-scroll">
                     <h2 class="white animate-on-scroll"><span class="yellow">about</span><br>us</h2>
@@ -139,7 +128,7 @@
                         </div>
                         <img src="assets/img/aboutustwo.png" alt="Bank Hotel overview and premium rooms">
                     </div>
-                    <button class="decagon poly-stroke-green double-poly animate-on-scroll">
+                    <a href="#rooms" class="decagon poly-stroke-green double-poly animate-on-scroll">
                         <svg viewBox="0 0 100 100" class="polygon">
                             <polygon points="
                                 50,5 
@@ -156,7 +145,7 @@
 
                         <p class="white"><i class="yellow">Rooms</i><br><span class="tc">and</span><br>apartments</p>
                         <img src="assets/img/icons/down.png" alt="Scroll to rooms" >
-                    </button>
+                    </a>
 
                 </div>
                 <div class="decor-wrapper">
@@ -190,7 +179,7 @@
       </div>
       <div class="rooms-booking-wrapper">
         <a class="room-photo-link" href="rooms/superior-twin.html" aria-label="View Superior Twin"><img src="assets/img/roomonemain.png" alt="Superior Twin bedroom with an upholstered headboard and a pendant lamp" class="main-pres-img"></a>
-        <a class="decagon poly-booking" href="rooms/superior-twin.html#contact">
+        <a class="decagon poly-booking" href="booking.html?room=superior-twin">
           <svg viewBox="0 0 100 100" class="polygon" aria-hidden="true">
             <polygon points="50,5 76.45,13.59 92.79,36.08 92.79,63.92 76.45,86.41 50,95 23.55,86.41 7.21,63.92 7.21,36.08 23.55,13.59"/>
           </svg>
@@ -217,7 +206,7 @@
       </div>
       <div class="rooms-booking-wrapper">
         <a class="room-photo-link" href="rooms/deluxe-double.html" aria-label="View Deluxe Double"><img src="assets/img/roomtwomain.webp" alt="Deluxe Double interior" class="main-pres-img"></a>
-        <a class="decagon poly-booking" href="rooms/deluxe-double.html#contact">
+        <a class="decagon poly-booking" href="booking.html?room=deluxe-double">
           <svg viewBox="0 0 100 100" class="polygon" aria-hidden="true">
             <polygon points="50,5 76.45,13.59 92.79,36.08 92.79,63.92 76.45,86.41 50,95 23.55,86.41 7.21,63.92 7.21,36.08 23.55,13.59"/>
           </svg>
@@ -244,7 +233,7 @@
       </div>
       <div class="rooms-booking-wrapper">
         <a class="room-photo-link" href="rooms/presidential-suite.html" aria-label="View Presidential Suite"><img src="assets/img/roomthreemain.webp" alt="Presidential Suite interior" class="main-pres-img"></a>
-        <a class="decagon poly-booking" href="rooms/presidential-suite.html#contact">
+        <a class="decagon poly-booking" href="booking.html?room=presidential-suite">
           <svg viewBox="0 0 100 100" class="polygon" aria-hidden="true">
             <polygon points="50,5 76.45,13.59 92.79,36.08 92.79,63.92 76.45,86.41 50,95 23.55,86.41 7.21,63.92 7.21,36.08 23.55,13.59"/>
           </svg>
@@ -271,7 +260,7 @@
       </div>
       <div class="rooms-booking-wrapper">
         <a class="room-photo-link" href="rooms/cozy-single.html" aria-label="View Cozy Single"><img src="assets/img/roomfourmain.jpg" alt="Cozy Single interior" class="main-pres-img"></a>
-        <a class="decagon poly-booking" href="rooms/cozy-single.html#contact">
+        <a class="decagon poly-booking" href="booking.html?room=cozy-single">
           <svg viewBox="0 0 100 100" class="polygon" aria-hidden="true">
             <polygon points="50,5 76.45,13.59 92.79,36.08 92.79,63.92 76.45,86.41 50,95 23.55,86.41 7.21,63.92 7.21,36.08 23.55,13.59"/>
           </svg>
@@ -410,9 +399,9 @@
                 <h6 class="gallery-decor">Bank hotel <span>Bank__hotel©</span> Bank hotel Bank hotel Bank<br>hotel Bank hotel  Bank hotel Bank  hotel Bank hotel Bank</h6>
             </section>
 
-            <section class="get-in-touch secondary-color-bckg">
+            <section id="contacts" class="get-in-touch secondary-color-bckg">
                 <div class="git-wrapper">
-                    <a tel:+380322975020 class="p30 animate-on-scroll">+38 032 297 50 20</a>
+                    <a href="tel:+380322975020" class="p30 animate-on-scroll">+38 032 297 50 20</a>
 
                     <div class="git-img-wrapper">
                     <address class="animate-on-scroll">8 Lystopadovoho <br>Chynu, Lviv</address>
@@ -420,31 +409,19 @@
                     </div>
                     <p class="p30 animate-on-scroll">Find a room</p>
                     <div class="git-enum-wrapper p30 animate-on-scroll">
-                    <form class="booking-form">
+                    <form class="booking-form" action="booking.html" method="get">
                         <div class="git-form-group">
-                        <select id="check-in" name="check-in" class="git-dropdown">
-                            <option value="1">Check in</option>
-                            <option value="2">Rooms</option>
-                            <option value="3">Restaurant</option>
-                            <option value="4">Conference Hall</option>
-                            <option value="5">Wine Bar</option>
-                        </select>
+                        <label class="git-dropdown home-date">Check in<input type="date" name="check-in" aria-label="Check in"></label>
                         </div>
 
                         <div class="git-form-group">
-                        <select id="check-out" name="check-out" class="git-dropdown">
-                            <option value="1">Check out</option>
-                            <option value="2">Rooms</option>
-                            <option value="3">Restaurant</option>
-                            <option value="4">Conference Hall</option>
-                            <option value="5">Wine Bar</option>
-                        </select>
+                        <label class="git-dropdown home-date">Check out<input type="date" name="check-out" aria-label="Check out"></label>
                         </div>
 
                         <button class="git-booking white">Book room</button>
                     </form>
                 </div>
-                <button class="decagon poly-booking animate-on-scroll">
+                <a href="booking.html" class="decagon poly-booking animate-on-scroll">
                         <svg viewBox="0 0 100 100" class="polygon">
                             <polygon points="
                                 50,5 
@@ -460,7 +437,7 @@
                         </svg>
 
                         <p>Book room</p>
-                    </button>
+                    </a>
                 </div>
                 <h2 class="git-title p30 animate-on-scroll">Get in<span class="yellow">touch</span></h2>
                 <img src="assets/img/icons/wave.png" alt="Decorative wave" class="git-wave animate-on-scroll">
@@ -477,9 +454,9 @@
             <section class="footsec animate-on-scroll">
                 <span class="footertitle"><span class="yellow">/</span>News</span>
                 <p>Sign up to our newsletter not to miss exclusive offers and information about the upcoming events.</p>
-                <form class="newsletter" action="#" method="post">
+                <form class="newsletter" action="404.html" method="get">
                 <div class="input-wrapper">
-                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="email" id="email" placeholder="Email" required>
                     <button type="submit" aria-label="Subscribe">➝</button>
                 </div>
                 </form>
@@ -488,9 +465,9 @@
                 <span class="footertitle"><span class="yellow">/</span>Social</span>
                 <nav>
                 <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Twitter</a></li>
+                    <li><a href="404.html">Facebook</a></li>
+                    <li><a href="404.html">Instagram</a></li>
+                    <li><a href="404.html">Twitter</a></li>
                 </ul>
                 </nav>
             </section>

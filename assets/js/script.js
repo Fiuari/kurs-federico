@@ -6,6 +6,13 @@ burger.addEventListener("click", () => {
   burger.classList.toggle("active");
 });
 
+header.querySelector(".main-menu").addEventListener("click", event => {
+  if (event.target.closest("a")) {
+    header.classList.remove("open");
+    burger.classList.remove("active");
+  }
+});
+
 const wrappers = document.querySelectorAll(".rooms-wrapper");
 const arrows = document.querySelectorAll(".poly-arrow"); // кнопки зі стрілкою
 let currentIndex = 0;

@@ -24,6 +24,11 @@ function render(template, values) {
 }
 
 const files = new Map();
+// Keep the browser's room choices in sync with the static room pages.
+const bookingRooms = rooms.map(({ slug, name, description, hero }) => ({ slug, name, description, hero }));
+files.set("assets/js/booking-catalog.js", "// Generated from data/rooms.js by generate-pages.js.\n" +
+  "const bookingRooms = " + JSON.stringify(bookingRooms, null, 2) + ";\n");
+
 const cards = [];
 for (const [i, room] of rooms.entries()) {
   const file = `rooms/${room.slug}.html`;

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>404 · BankHotel</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+      background: #313f38;
+      color: #fffcf6;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin: 0;
+      color: #fcd043;
+      font: 400 clamp(6.5rem, 21vw, 17rem)/.9 Georgia, serif;
+      letter-spacing: -.065em;
+    }
+    p { margin: 1.5rem 0 2rem; font-size: clamp(1.15rem, 2.4vw, 1.75rem); }
+    a {
+      display: inline-block;
+      padding: .9rem 1.65rem;
+      border-radius: 2rem;
+      background: #fcd043;
+      color: #25362c;
+      text-decoration: none;
+    }
+    a:hover { background: #ffe17d; }
+    a:focus-visible { outline: 2px solid #fffcf6; outline-offset: 5px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>404</h1>
+    <p>вибачте, щось пішло не так</p>
+    <a id="back" href="/kurs-federico/"><span aria-hidden="true">←</span> Повернутись назад</a>
+  </main>
+  <script>
+    const back = document.getElementById("back");
+    // GitHub Pages serves this HTML at the missing URL, even several folders deep.
+    if (location.protocol === "file:") {
+      back.href = "index.html";
+    } else if (!location.pathname.startsWith("/kurs-federico/")) {
+      back.href = "/index.html";
+    }
+    if (document.referrer && history.length > 1) {
+      const previous = new URL(document.referrer);
+      const home = new URL(back.href);
+      const sitePath = new URL(".", home).pathname;
+      if (previous.origin === home.origin && previous.pathname.startsWith(sitePath) &&
+          previous.pathname !== location.pathname && !/\/(about|contacts|404)\.html$/.test(previous.pathname)) {
+        back.addEventListener("click", event => {
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          history.back();
+        });
+      }
+    }
+  </script>
+</body>
+</html>
