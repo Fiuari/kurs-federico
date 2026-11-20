@@ -1,0 +1,32 @@
+[hidden] { display: none !important; }
+.account-layout {
+  max-width: 1350px; margin: auto; padding: clamp(2rem, 5vw, 5rem) var(--edge);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 8vw, 8rem);
+}
+.account-intro h1 { font-size: clamp(3.5rem, 6vw, 7rem); line-height: 1; letter-spacing: -.03em; margin-bottom: 2rem; }
+.account-intro em { color: #89661a; }
+.account-intro img { width: 100%; max-height: 25rem; object-fit: cover; }
+.account-panel { align-self: center; }
+.account-panel h2 { font-size: clamp(2.1rem, 4vw, 3.6rem); margin-bottom: 1rem; }
+.account-panel p { line-height: 1.5; overflow-wrap: anywhere; }
+#auth-status { margin-bottom: 1rem; }
+.auth-switch { display: flex; margin: 1.5rem 0; border-bottom: 1px solid #a0ab9e; }
+.auth-switch button { flex: 1; padding: .8rem; background: none; border: 0; color: inherit; font: inherit; cursor: pointer; }
+.auth-switch button[aria-pressed=true] { border-bottom: 3px solid #313f38; font-weight: bold; }
+#auth-form label { display: grid; gap: .4rem; margin: 1rem 0; }
+#auth-form input { width: 100%; padding: .8rem; font: inherit; border: 1px solid #8b998b; color: #313f38; background: #fffefa; }
+.account-panel .auth-primary, .account-panel .auth-secondary {
+  display: inline-block; padding: .85rem 1.4rem; font: inherit; text-decoration: none;
+  margin: 1rem .5rem 0 0; cursor: pointer; border: 1px solid #313f38; color: #313f38;
+}
+.auth-primary { background: #fcd043; }
+.auth-secondary { background: transparent; }
+.account-panel button:disabled { opacity: .6; cursor: wait; }
+#registration-note { font-size: .85rem; }
+.masthead .room-nav { flex-wrap: wrap; }
+.masthead { flex-wrap: wrap; }
+@media(max-width:700px) {
+  .account-layout { grid-template-columns: 1fr; }
+  .account-intro img { display: none; }
+  .account-intro h1 { font-size: 3.5rem; margin-bottom: 0; }
+}

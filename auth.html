@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Your account · BankHotel</title>
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/room.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="assets/js/supabase-client.js"></script>
+  <script defer src="assets/js/auth-common.js"></script>
+  <script defer src="assets/js/auth-page.js"></script>
+</head>
+<body class="room-page">
+  <header class="masthead">
+    <a class="brand" href="index.html">BankHotel</a>
+    <nav class="room-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#rooms">Rooms</a></nav>
+  </header>
+  <main class="account-layout">
+    <div class="account-intro">
+      <h1>Your <em>stay</em><br>starts here</h1>
+      <img src="assets/img/getintouch.png" alt="A quiet lounge corner at BankHotel">
+    </div>
+    <section class="account-panel" aria-labelledby="account-title">
+      <h2 id="account-title">Welcome back</h2>
+      <p id="auth-status" role="status">Checking your session…</p>
+      <div id="signed-in" hidden>
+        <p>Signed in as <strong id="account-email"></strong></p>
+        <a class="auth-primary" id="continue" href="index.html">Continue</a>
+        <button class="auth-secondary" id="sign-out" type="button">Sign out</button>
+      </div>
+      <div id="signed-out" hidden>
+        <div class="auth-switch" role="group" aria-label="Account action">
+          <button type="button" id="login-mode" aria-pressed="true">Sign in</button>
+          <button type="button" id="register-mode" aria-pressed="false">Create account</button>
+        </div>
+        <form id="auth-form">
+          <label id="name-label" hidden>Full name<input id="full-name" autocomplete="name" maxlength="100"></label>
+          <label>Email<input id="auth-email" type="email" autocomplete="email" maxlength="254" required></label>
+          <label>Password<input id="auth-password" type="password" autocomplete="current-password" required></label>
+          <label id="repeat-label" hidden>Repeat password<input id="repeat-password" type="password" autocomplete="new-password"></label>
+          <p id="registration-note" hidden>Use at least 8 characters. Check your email to confirm your account after registration.</p>
+          <button class="auth-primary" id="auth-submit">Sign in</button>
+        </form>
+      </div>
+      <button class="auth-secondary" type="button" id="retry-session" hidden>Try again</button>
+      <noscript>Enable JavaScript to sign in or create an account.</noscript>
+    </section>
+  </main>
+</body>
+</html>
