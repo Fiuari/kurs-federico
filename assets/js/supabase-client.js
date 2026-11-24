@@ -11,19 +11,27 @@ function getHotelClient() {
   return hotelClient;
 }
 
-async function loadRooms() {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 12000);
-  try {
-    const { data, error } = await getHotelClient()
-      .from("rooms")
-      .select("id, slug, name, description, price_per_night, image_file, image_alt")
-      .eq("is_active", true)
-      .order("price_per_night")
-      .abortSignal(controller.signal);
+async function apiRequest(path, {method = "GET", body, authenticated = false} = {}) {
+  if (!HOTEL_API_URL) throw new Error("API_NOT_CONFIGURED");
+  const headers = {};
+  if (body !== undefined) headers["Content-Type"] = "application/json";
+  if (authenticated) {
+    const {data, error} = await getHotelClient().auth.getSession();
     if (error) throw error;
-    return data;
-  } finally {
-    clearTimeout(timer);
+    if (!data.session) throw new Error("SIGN_IN_REQUIRED");
+    headers.Authorization = "Bearer " + data.session.access_token;
   }
+  const controller = new AbortController();
+  // Allows a sleeping Render instance time to start. Never automatically retry writes.
+  const timeout = setTimeout(() => controller.abort(), 70000);
+  try {
+    const response = await fetch(HOTEL_API_URL.replace(/\/$/, "") + "/api" + path, {
+      method, headers, signal: controller.signal,
+      body: body === undefined ? undefined : JSON.stringify(body)
+    });
+    const payload = await response.json();
+    if (!response.ok) throw Object.assign(new Error(payload.error?.message || "API_UNAVAILABLE"), {code:payload.error?.code, status:response.status});
+    return payload;
+  } finally { clearTimeout(timeout); }
 }
+function loadRooms() { return apiRequest("/rooms"); }

@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="assets/css/default.css">
   <link rel="stylesheet" href="assets/css/room.css">
   <link rel="stylesheet" href="assets/css/booking.css">
-  <script defer src="assets/js/booking-catalog.js"></script>
-  <script defer src="assets/js/booking-common.js"></script>
-  <script defer src="assets/js/booking.js"></script>
   <link rel="stylesheet" href="assets/css/auth.css">
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="assets/js/api-config.js"></script>
   <script defer src="assets/js/supabase-client.js"></script>
   <script defer src="assets/js/auth-common.js"></script>
+  <script defer src="assets/js/booking-common.js"></script>
+  <script defer src="assets/js/booking.js"></script>
 </head>
 <body class="room-page reservation-page">
   <header class="masthead">
@@ -28,8 +28,10 @@
       <h2 id="room-title"></h2>
       <p id="room-description"></p>
       <p class="rate"><strong id="room-rate"></strong> / night</p>
-      <button class="primary" id="start" type="button">Start booking <span aria-hidden="true">↗</span></button>
-      <p class="note">Demo booking · Sample rates and availability.</p>
+      <button class="primary" id="start" type="button" disabled>Start booking <span aria-hidden="true">↗</span></button>
+      <p class="note">Availability for the next 30 nights. Arrival: 14:00, 16:00 or 18:00. Departure: 08:00, 10:00 or 12:00.</p>
+      <p id="booking-status" role="status">Loading rooms and availability…</p>
+      <button id="retry-booking" class="secondary" type="button" hidden>Try again</button>
       <noscript>Enable JavaScript to choose dates and book a room.</noscript>
     </div>
     <img id="room-photo" class="booking-photo" src="assets/img/roomonemain.png" alt="Superior Twin bedroom">
@@ -59,7 +61,7 @@
   </dialog>
   <dialog id="confirmation" aria-labelledby="success-title">
     <h2 id="success-title">Booking confirmed</h2>
-    <p class="receipt"></p><p class="note">Demo confirmation. No actual room is reserved or payment collected.</p>
+    <p class="receipt"></p><p class="note">Your reservation has been saved to your account. No online payment has been collected.</p>
     <button class="primary" type="button" onclick="this.closest('dialog').close()">Done</button>
   </dialog>
 </body>

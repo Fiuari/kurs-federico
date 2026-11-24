@@ -1,0 +1,8 @@
+{
+  "name": "bankhotel-api",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": "22.x" },
+  "scripts": { "start": "node --env-file-if-exists=.env index.js", "test": "node --test test/*.test.js" },
+  "dependencies": { "@supabase/supabase-js": "2.119.2", "express": "^5.1.0" }
+}

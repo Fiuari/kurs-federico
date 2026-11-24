@@ -9,9 +9,12 @@
   <link rel="stylesheet" href="assets/css/room.css">
   <link rel="stylesheet" href="assets/css/auth.css">
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="assets/js/api-config.js"></script>
   <script defer src="assets/js/supabase-client.js"></script>
   <script defer src="assets/js/auth-common.js"></script>
   <script defer src="assets/js/auth-page.js"></script>
+  <script defer src="assets/js/admin-api.js"></script>
+  <script defer src="assets/js/auth-admin-link.js"></script>
 </head>
 <body class="room-page">
   <header class="masthead">
@@ -29,6 +32,7 @@
       <div id="signed-in" hidden>
         <p>Signed in as <strong id="account-email"></strong></p>
         <a class="auth-primary" id="continue" href="index.html">Continue</a>
+        <a class="auth-primary" id="manage-rooms" href="admin.html" hidden>Manage rooms</a>
         <button class="auth-secondary" id="sign-out" type="button">Sign out</button>
       </div>
       <div id="signed-out" hidden>

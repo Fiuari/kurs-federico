@@ -1,0 +1,96 @@
+BankHotel — запуск Node.js + Express на Render
+
+Архітектура
+GitHub Pages → Express API на Render → Supabase.
+Реєстрація/вхід/вихід працюють через Supabase Auth. Браузер передає access token
+в Authorization: Bearer; сервер перевіряє користувача через auth.getUser().
+Кожен захищений запит використовує окремий Supabase client з цим токеном.
+RLS, роль адміністратора, розрахунок ціни та захист від перетину бронювань залишаються в базі.
+service_role, secret key або пароль PostgreSQL для цієї реалізації НЕ потрібні.
+
+1. Підготовка репозиторію
+Переконайся, що попередні SQL 001–004 уже виконані (ти це вже зробила).
+Нової SQL-міграції для API немає.
+Збережи зміни й відправ їх у GitHub main, включно з server/package-lock.json.
+Не додавай server/.env та node_modules — вони виключені через .gitignore.
+До налаштування URL API опублікований каталог показуватиме помилку завантаження;
+тому після першого deploy одразу виконай крок 4.
+
+2. Створи Web Service на Render
+Render Dashboard → New → Web Service → підключи GitHub-репозиторій Fiuari/kurs-federico.
+Name: довільне вільне ім'я, наприклад bankhotel-api.
+Language/Runtime: Node.
+Branch: main.
+Root Directory: server.
+Build Command: npm ci
+Start Command: npm start
+Health Check Path: /health
+Вибери регіон ближче до бази/користувачів та доступний тобі тариф.
+package.json задає Node 22.x. Сервер слухає 0.0.0.0 і PORT, який надає Render.
+
+3. Environment Variables на Render
+SUPABASE_URL = https://ntydnzeagkjpvwayqacf.supabase.co
+SUPABASE_PUBLISHABLE_KEY = твій поточний ключ sb_publishable_... з Supabase
+ALLOWED_ORIGINS = https://fiuari.github.io,http://127.0.0.1:5500,http://localhost:5500
+NODE_ENV = production
+Значення в інтерфейсі Render вводь без лапок.
+ALLOWED_ORIGINS містить тільки походження: БЕЗ /kurs-federico/ і без кінцевого слеша.
+Якщо Live Server працює на іншому порту, додай його адресу окремим значенням через кому.
+PORT вручну на Render задавати не потрібно.
+Натисни Create Web Service. Дочекайся успішного deploy.
+
+4. Підключи адресу сервера до сайту
+Скопіюй фактичну адресу Render, наприклад https://bankhotel-api-xxxx.onrender.com.
+Відкрий assets/js/api-config.js. Для роботи і локального сайту, і GitHub Pages
+через Render заміни весь вираз присвоєння на:
+
+const HOTEL_API_URL = 'https://ТВОЯ-ФАКТИЧНА-АДРЕСА.onrender.com';
+
+Не додавай /api — клієнт додає його сам.
+Зроби commit/push цього файлу, дочекайся GitHub Pages і онови сайт Ctrl+F5.
+Адреса API публічна; це не секрет.
+
+5. Перевірка
+https://ТВОЯ-АДРЕСА.onrender.com/health → {"status":"ok"}.
+Це перевіряє запуск процесу, а не доступ до бази.
+https://ТВОЯ-АДРЕСА.onrender.com/api/rooms → JSON-масив доступних номерів.
+Це вже перевіряє зв'язок Express → Supabase.
+На GitHub Pages: каталог, пошук, сторінка номера, вхід, бронювання, адмін CRUD.
+У DevTools → Network запити rooms/bookings/admin мають іти на onrender.com/api/...
+Запити авторизації до supabase.co — очікувані.
+Без токена захищені маршрути повертають 401; звичайний користувач в адмінці — 403.
+
+6. За бажанням: локальний сервер
+У терміналі з папки проєкту:
+cd server
+npm ci
+Copy-Item .env.example .env
+Заповни server/.env своїм publishable key.
+npm start
+API працюватиме на http://localhost:3000.
+Для локального API у api-config.js задай const HOTEL_API_URL = 'http://localhost:3000';
+Для GitHub Pages потрібна HTTPS-адреса Render, localhost там працювати не буде.
+За початкової конфігурації localhost автоматично обраний лише для локального сайту;
+адреса для опублікованого сайту навмисно порожня до отримання справжнього URL Render.
+
+7. Помилки
+- ORIGIN_NOT_ALLOWED або CORS: перевір ALLOWED_ORIGINS, порт, http/https; збережи і redeploy.
+- API_NOT_CONFIGURED / каталог не завантажується: перевір api-config.js і публікацію Pages.
+- /health працює, /api/rooms — ні: перевір SUPABASE_URL, ключ, активність Supabase та RLS.
+- 401: увійди повторно; 403 в адмінці: перевір hotel_admins і свій акаунт.
+- Перший запит може бути довшим при запуску сервісу; клієнт очікує до 70 секунд.
+- Не відкривай HTML через file://: використовуй Live Server або GitHub Pages.
+
+API
+GET /api/rooms — активні номери
+GET /api/rooms/:slug — один активний номер, null якщо відсутній
+GET /api/availability — зайняті дати без персональних даних
+GET /api/me/admin — роль поточного користувача
+GET /api/bookings/:id — власне бронювання або null
+POST /api/bookings — збереження через чинну SQL-функцію create_booking
+GET/POST /api/admin/rooms — список/додавання
+PATCH/DELETE /api/admin/rooms/:id — редагування/видалення
+
+Тести: cd server; npm test. Серверні тести використовують імітацію Supabase,
+перевіряють HTTP-маршрути, токени, роль, фільтр власника, валідацію, CORS і помилки.
+https://render.com/docs/deploy-node-express-app

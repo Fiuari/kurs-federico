@@ -4,40 +4,18 @@ const header = document.querySelector(".header");
 burger.addEventListener("click", () => {
   header.classList.toggle("open");
   burger.classList.toggle("active");
+  burger.setAttribute("aria-expanded", String(header.classList.contains("open")));
 });
 
 header.querySelector(".main-menu").addEventListener("click", event => {
   if (event.target.closest("a")) {
     header.classList.remove("open");
     burger.classList.remove("active");
+    burger.setAttribute("aria-expanded", "false");
   }
 });
 
-const wrappers = document.querySelectorAll(".rooms-wrapper");
-const arrows = document.querySelectorAll(".poly-arrow"); // кнопки зі стрілкою
-let currentIndex = 0;
-
-// функція показу потрібного слайду
-function showSlide(index) {
-  wrappers.forEach((wrapper, i) => {
-    wrapper.style.opacity = i === index ? "1" : "0";
-    wrapper.style.transform = i === index ? "translateX(0)" : "translateX(100%)";
-    wrapper.style.zIndex = i === index ? "1" : "0";
-  });
-}
-
-// початковий стан
-showSlide(currentIndex);
-
-// при кліку на стрілку
-arrows.forEach(arrow => {
-  arrow.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % wrappers.length; // зациклення
-    showSlide(currentIndex);
-  });
-});
-
-
+// The asynchronous room slider lives in home-rooms.js.
 
 // Accordion toggle (adds .open to the clicked .accordion-item)
 const accordionItems = document.querySelectorAll('.accordion-item');
@@ -86,3 +64,10 @@ const observer = new IntersectionObserver(entries => {
 });
 
 elements.forEach(el => observer.observe(el));
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && header.classList.contains("open")) {
+    header.classList.remove("open"); burger.classList.remove("active");
+    burger.setAttribute("aria-expanded", "false"); burger.focus();
+  }
+});

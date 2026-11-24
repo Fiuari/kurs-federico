@@ -45,3 +45,9 @@ dialog::backdrop { background: rgb(18 30 22 / 70%); }
   .booking-layout { grid-template-columns: 1fr; }
   .booking-photo { height: auto; aspect-ratio: 4 / 3; }
 }
+
+.reservation-page .secondary {
+  padding: .65rem 1rem; margin: .75rem .75rem .75rem 0; border: 1px solid #313f38;
+  color: #313f38; background: transparent; font: inherit; cursor: pointer;
+}
+#booking-status, #payment-message { line-height: 1.5; margin-top: 1rem; }

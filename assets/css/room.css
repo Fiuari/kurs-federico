@@ -152,3 +152,10 @@
   .contact-meta { flex-wrap: wrap; }
   .contact-art img { width: 40%; margin-right: 0; }
 }
+
+.room-state { padding: 4rem var(--edge); min-height: 55vh; }
+.room-state h1 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 1rem; }
+.room-state p { margin-bottom: 1.5rem; line-height: 1.6; }
+.room-state .outline-link { margin: .5rem .5rem .5rem 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+#room-name, #intro-title, #room-caption { overflow-wrap: anywhere; }
+#room-description { white-space: pre-line; overflow-wrap: anywhere; }

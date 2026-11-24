@@ -13,7 +13,7 @@ let registerMode = false;
 let requestRunning = false;
 
 // Only predefined destinations are accepted; URL parameters cannot redirect off-site.
-const destination = new URL(params.get("next") === "booking" ? "booking.html" : "index.html", hotelRoot);
+const destination = new URL(params.get("next") === "admin" ? "admin.html" : params.get("next") === "admin" ? "admin.html" : params.get("next") === "booking" ? "booking.html" : "index.html", hotelRoot);
 if (params.get("next") === "booking" && /^[a-z0-9-]+$/.test(params.get("room") || "")) {
   destination.searchParams.set("room", params.get("room"));
 }

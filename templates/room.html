@@ -3,82 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{description}}">
-  <title>{{name}} · BankHotel</title>
-  <link rel="stylesheet" href="../assets/css/default.css">
-  <link rel="stylesheet" href="../assets/css/room.css">
-  <link rel="stylesheet" href="../assets/css/auth.css">
+  <meta name="description" content="Explore rooms at BankHotel in Lviv.">
+  <title>Room · BankHotel</title>
+  <link rel="stylesheet" href="{{base}}assets/css/default.css">
+  <link rel="stylesheet" href="{{base}}assets/css/room.css">
+  <link rel="stylesheet" href="{{base}}assets/css/auth.css">
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
-  <script defer src="../assets/js/supabase-client.js"></script>
-  <script defer src="../assets/js/auth-common.js"></script>
+  <script defer src="{{base}}assets/js/api-config.js"></script>
+  <script defer src="{{base}}assets/js/supabase-client.js"></script>
+  <script defer src="{{base}}assets/js/auth-common.js"></script>
+  <script defer src="{{base}}assets/js/rooms-public.js"></script>
+  <script defer src="{{base}}assets/js/room-page.js"></script>
 </head>
-<body class="room-page">
+<body class="room-page" data-room-slug="{{slug}}">
   <a class="skip" href="#room">Skip to room</a>
   <header class="masthead">
-    <a class="brand" href="../index.html">BankHotel</a>
-    <nav class="room-nav" aria-label="Main navigation">
-      <a href="../index.html">Home</a>
-      <a href="../index.html#rooms">Rooms</a>
-      <a href="#contact">Contact</a>
-     <a data-account-link href="../auth.html">Sign in</a></nav>
+    <a class="brand" href="{{base}}index.html">BankHotel</a>
+    <nav class="room-nav" aria-label="Main navigation"><a href="{{base}}index.html">Home</a><a href="{{base}}index.html#rooms">Rooms</a><a data-account-link href="{{base}}auth.html">Sign in</a></nav>
     <a class="header-phone" href="tel:+380322975020">+38 032 297 50 20</a>
   </header>
-
   <main id="room">
-    <section class="room-hero" aria-labelledby="room-name">
-      <img class="hero-photo" src="../assets/img/{{hero.file}}" alt="{{hero.alt}}" fetchpriority="high">
-      <h1 id="room-name">{{headingFirst}}<br>{{headingRest}}</h1>
-      <p class="hero-note">All room decoration was made with ecological certified and safe materials.</p>
-      <a class="room-seal" href="../booking.html?room={{slug}}">Book room<span aria-hidden="true">↘</span></a>
+    <section id="room-state" class="room-state" aria-labelledby="room-state-title">
+      <h1 id="room-state-title">Your room</h1><p id="room-status" role="status">Loading room details…</p>
+      <button id="retry-room" class="outline-link" type="button" hidden>Try again</button>
+      <a class="outline-link" href="{{base}}index.html#rooms">Explore other rooms</a>
+      <noscript>Enable JavaScript to view this room.</noscript>
     </section>
-
-    <section class="room-intro" aria-labelledby="intro-title">
-      <div class="inner">
-        <p class="since"><img src="../assets/img/icons/Star.png" alt="" width="28" height="28">Since 1973</p>
-        <div class="intro-copy">
-          <h2 id="intro-title">{{introTitle}}</h2>
-          <p>{{intro}}</p>
+    <div id="room-content" hidden>
+      <section class="room-hero" aria-labelledby="room-name">
+        <img class="hero-photo" data-room-image alt="" fetchpriority="high">
+        <h1 id="room-name"></h1>
+        <p class="hero-note">All room decoration was made with ecological certified and safe materials.</p>
+        <a class="room-seal" data-book-room>Book room<span aria-hidden="true">↘</span></a>
+      </section>
+      <section class="room-intro" aria-labelledby="intro-title">
+        <div class="inner">
+          <p class="since"><img src="{{base}}assets/img/icons/Star.png" alt="" width="28" height="28">Since 1973</p>
+          <div class="intro-copy"><h2 id="intro-title"></h2><p id="room-description"></p></div>
+          <figure class="bedroom"><figcaption id="room-caption"></figcaption><img data-room-image alt="" loading="lazy"></figure>
         </div>
-        <figure class="bedroom">
-          <figcaption>{{caption}}</figcaption>
-          <img src="../assets/img/{{interior.file}}" alt="{{interior.alt}}" loading="lazy">
-        </figure>
-      </div>
-    </section>
-
-    <section class="details inner" aria-labelledby="details-title">
-      <div class="bath">
-{{#detail}}
-        <img src="../assets/img/{{detail.file}}" alt="{{detail.alt}}" loading="lazy">
-{{/detail}}
-        <h2 id="details-title">{{name}}</h2>
-        <p>{{detailText}}</p>
-      </div>
-      <div class="vanity">
-{{#secondDetail}}
-        <img src="../assets/img/{{secondDetail.file}}" alt="{{secondDetail.alt}}" loading="lazy">
-{{/secondDetail}}
-        <p>{{secondText}}</p>
-      </div>
-      <a class="outline-link" href="../booking.html?room={{slug}}">Book room <span aria-hidden="true">↘</span></a>
-    </section>
-
-    <section class="room-contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact-meta">
-        <a class="contact-phone" href="tel:+380322975020">+38 032 297 50 20</a>
-        <p>8 Lystopadovoho Chynu,<br>Lviv, Ukraine</p>
-      </div>
-      <div class="contact-art">
-        <img src="../assets/img/getintouch.png" alt="" loading="lazy">
-        <h2 id="contact-title">Get in <em>touch</em></h2>
-      </div>
-      <a class="outline-link" href="tel:+380322975020">Call to book <span aria-hidden="true">↗</span></a>
-    </section>
+      </section>
+      <section class="details inner" aria-labelledby="details-title">
+        <div class="bath"><h2 id="details-title">Your stay</h2><p><strong id="room-nightly-rate"></strong> / night</p><p>Choose your dates to see availability and the total price for your stay.</p></div>
+        <div class="vanity"><h2>Plan your arrival</h2><p>Check-in: 14:00, 16:00 or 18:00.<br>Check-out: 08:00, 10:00 or 12:00.<br>All times are local to Lviv.</p></div>
+        <a class="outline-link" data-book-room>Book room <span aria-hidden="true">↘</span></a>
+      </section>
+      <section class="room-contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-meta"><a class="contact-phone" href="tel:+380322975020">+38 032 297 50 20</a><p>8 Lystopadovoho Chynu,<br>Lviv, Ukraine</p></div>
+        <div class="contact-art"><img src="{{base}}assets/img/getintouch.png" alt="" loading="lazy"><h2 id="contact-title">Get in <em>touch</em></h2></div>
+        <a class="outline-link" href="tel:+380322975020">Call to book <span aria-hidden="true">↗</span></a>
+      </section>
+    </div>
   </main>
-
-  <footer class="room-footer">
-    <a class="brand" href="../index.html">BankHotel</a>
-    <a class="return-link" href="../index.html#rooms">← All rooms &amp; apartments</a>
-  </footer>
+  <footer class="room-footer"><a class="brand" href="{{base}}index.html">BankHotel</a><a class="return-link" href="{{base}}index.html#rooms">← All rooms &amp; apartments</a></footer>
 </body>
 </html>

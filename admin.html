@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Manage rooms · BankHotel</title>
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/room.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="assets/js/api-config.js"></script>
+  <script defer src="assets/js/supabase-client.js"></script>
+  <script defer src="assets/js/auth-common.js"></script>
+  <script defer src="assets/js/admin-api.js"></script>
+  <script defer src="assets/js/admin.js"></script>
+</head>
+<body class="room-page admin-page">
+  <header class="masthead">
+    <a class="brand" href="index.html">BankHotel</a>
+    <nav class="room-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="booking.html">Booking</a><a data-account-link href="auth.html?next=admin">Account</a></nav>
+  </header>
+  <main class="admin-layout">
+    <p class="eyebrow">BankHotel · Administration</p>
+    <h1>Manage <em>rooms</em></h1>
+    <p id="admin-status" role="status">Checking your access…</p>
+    <div id="access-actions">
+      <a class="admin-button" href="auth.html?next=admin">Sign in / Account</a>
+      <button class="admin-button secondary" id="retry-access" type="button">Check access again</button>
+    </div>
+    <section id="admin-content" aria-label="Room management" hidden>
+      <div class="admin-toolbar">
+        <p id="room-count"></p>
+        <div><button class="admin-button secondary" id="refresh-rooms" type="button">Refresh</button><button class="admin-button" id="add-room" type="button">Add room <span aria-hidden="true">＋</span></button></div>
+      </div>
+      <div class="table-scroll" role="region" aria-label="Rooms" tabindex="0">
+        <table><thead><tr><th scope="col">Room</th><th scope="col">Price / night</th><th scope="col">Availability</th><th scope="col">Actions</th></tr></thead><tbody id="room-rows"></tbody></table>
+      </div>
+      <p id="empty-rooms" hidden>No rooms yet. Add your first room to start accepting bookings.</p>
+      <p class="admin-note">Rooms with bookings cannot be deleted. Turn off their availability to stop new reservations.</p>
+    </section>
+    <noscript>Enable JavaScript to manage rooms.</noscript>
+  </main>
+  <dialog id="room-editor" aria-labelledby="editor-title">
+    <form id="room-form">
+      <div class="editor-heading"><h2 id="editor-title">Add room</h2><button class="icon-button" id="close-editor" type="button" aria-label="Close editor">×</button></div>
+      <label>Room name<input id="edit-name" maxlength="100" required></label>
+      <label>Booking address<input id="edit-slug" maxlength="100" pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="garden-suite" required aria-describedby="slug-help"></label>
+      <p class="admin-note" id="slug-help">Lowercase Latin letters, digits and hyphens. The address stays the same after creation so booking links keep working.</p>
+      <label>Description<textarea id="edit-description" rows="4" maxlength="5000"></textarea></label>
+      <label>Price per night (UAH)<input id="edit-price" type="number" min="0.01" max="99999999.99" step="0.01" required></label>
+      <label>Room photo<select id="edit-image" required>
+        <option value="roomonemain.png">Superior Twin interior</option><option value="roomtwomain.webp">Deluxe Double interior</option><option value="roomthreemain.webp">Presidential Suite interior</option><option value="roomfourmain.jpg">Cozy Single interior</option>
+      </select></label>
+      <img id="image-preview" class="admin-preview" src="assets/img/roomonemain.png" alt="Selected room photo">
+      <label>Photo description<input id="edit-alt" maxlength="300" placeholder="A bright bedroom with a double bed"></label>
+      <label class="check-label"><input id="edit-active" type="checkbox" checked> Available for booking</label>
+      <p id="editor-status" role="status"></p>
+      <div class="editor-actions"><button class="admin-button secondary" id="cancel-editor" type="button">Cancel</button><button class="admin-button" id="save-room">Save room</button></div>
+    </form>
+  </dialog>
+  <dialog id="delete-dialog" aria-labelledby="delete-title">
+    <h2 id="delete-title">Delete room?</h2>
+    <p id="delete-description"></p><p>This action permanently removes the room. Rooms with bookings are protected.</p>
+    <p id="delete-status" role="status"></p>
+    <div class="editor-actions"><button class="admin-button secondary" id="cancel-delete" type="button" autofocus>Keep room</button><button class="admin-button danger" id="confirm-delete" type="button">Delete room</button></div>
+  </dialog>
+</body>
+</html>
