@@ -21,7 +21,10 @@ function setRoomImage(image, room) {
 }
 function selectPublicRooms(rooms, search, sort) {
   const term = search.trim().toLocaleLowerCase();
-  return rooms.filter(room => (room.name + " " + room.description).toLocaleLowerCase().includes(term))
+  // Match both the source and translated descriptions without changing DB values.
+  return rooms.filter(room => [room.name, room.description].map(text =>
+    globalThis.HotelI18n ? HotelI18n.searchText(text) : text
+  ).join(" ").toLocaleLowerCase().includes(term))
     .sort((a, b) => {
       const price = Number(a.price_per_night) - Number(b.price_per_night);
       return (sort === "price-desc" ? -price : price) || a.name.localeCompare(b.name);

@@ -51,7 +51,7 @@ pay.addEventListener("click", async () => {
     const booking = await createBooking(checkout);
     showSaved(booking);
     paymentMessage.textContent = "";
-    confirmation.querySelector(".receipt").textContent = summary.textContent;
+    confirmation.querySelector(".receipt").textContent = globalThis.HotelI18n ? HotelI18n.originalText(summary) : summary.textContent;
     confirmation.showModal();
   } catch (error) {
     paymentMessage.textContent = bookingError(error);

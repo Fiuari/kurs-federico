@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,12 +37,21 @@
     a:hover { background: #ffe17d; }
     a:focus-visible { outline: 2px solid #fffcf6; outline-offset: 5px; }
   </style>
+  <script>
+    (() => {
+      const base = location.protocol === 'file:' ? new URL('.', location.href) : new URL(location.pathname.startsWith('/kurs-federico/') ? '/kurs-federico/' : '/', location.origin);
+      const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = new URL('assets/css/i18n.css', base); document.head.append(css);
+      const words = document.createElement('script'); words.src = new URL('assets/js/translations-uk.js', base);
+      words.onload = () => { const script = document.createElement('script'); script.src = new URL('assets/js/i18n.js', base); document.head.append(script); };
+      document.head.append(words);
+    })();
+  </script>
 </head>
 <body>
   <main>
     <h1>404</h1>
-    <p>вибачте, щось пішло не так</p>
-    <a id="back" href="/kurs-federico/"><span aria-hidden="true">←</span> Повернутись назад</a>
+    <p>Sorry, something went wrong</p>
+    <a id="back" href="/kurs-federico/"><span aria-hidden="true">←</span> Go back</a>
   </main>
   <script>
     const back = document.getElementById("back");

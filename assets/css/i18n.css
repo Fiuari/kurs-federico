@@ -1,0 +1,35 @@
+/* Shared language control. It never replaces or hides account/navigation links. */
+.language-switch { display: inline-flex; align-items: center; flex-shrink: 0; order: 2; color: #fcd043; }
+.language-switch select { width: 70px; min-height: 44px; padding: 8px 4px; font: 14px Arial, sans-serif; background: #313f38; color: #fcd043; border: 1px solid #fcd043; border-radius: 0; cursor: pointer; }
+.language-switch select:focus-visible { outline: 2px solid #fcd043; outline-offset: 4px; }
+.language-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.language-switch-standalone { justify-self: end; margin: 16px; }
+.masthead { flex-wrap: wrap; }
+.room-nav { flex-wrap: wrap; }
+.home-page .header { gap: 8px; }
+.home-page .header .logo { font-size: 17px; }
+.home-page .header-account { padding-inline: 8px; font-size: 13px; }
+.home-page .header .language-switch { order: 0; }
+.home-page .burger { flex-shrink: 0; width: 32px; }
+/* Miracle has no Cyrillic glyphs: use a consistent serif fallback for Ukrainian. */
+html[lang="uk"] h1, html[lang="uk"] h2, html[lang="uk"] h3, html[lang="uk"] h5,
+html[lang="uk"] .number, html[lang="uk"] .title { font-family: Georgia, 'Times New Roman', serif; }
+html[lang="uk"] .title-wrapper h1 { font-family: Miracle, Georgia, serif; }
+html[lang="uk"] .home-page h2 { font-size: clamp(38px, 6.5vw, 124px); overflow-wrap: anywhere; }
+html[lang="uk"] .home-page .facilities-grid-wrapper h2 { font-size: clamp(56px, 8vw, 130px); }
+html[lang="uk"] .home-page .git-title { font-size: clamp(44px, 9vw, 174px); }
+html[lang="uk"] .home-page .rooms-text-wrapper h3 { font-size: clamp(28px, 2.8vw, 46px); }
+html[lang="uk"] .home-page .title { font-size: clamp(24px, 3.5vw, 60px); }
+html[lang="uk"] .room-seal { font-size: 14px; }
+html[lang="uk"] .room-page h1, html[lang="uk"] .room-page h2, html[lang="uk"] .room-page h3 { overflow-wrap: anywhere; }
+html[lang="uk"] .reservation-page h1, html[lang="uk"] .account-intro h1 { font-size: clamp(2.1rem, 5.5vw, 6rem); }
+html[lang="uk"] .contact-art h2 { width: 100%; font-size: clamp(2rem, 8vw, 10rem); }
+@media (min-width: 700px) {
+  .home-page .header .logo { font-size: 20px; }
+  .home-page .header-account { font-size: 14px; }
+}
+@media (min-width: 1200px) {
+  .home-page .header { gap: 16px; }
+  .home-page .header .language-switch { order: 3; }
+  .home-page .main-menu { gap: clamp(12px, 1.3vw, 24px); }
+}

@@ -106,7 +106,7 @@ async function reloadAfterWrite(message, version) {
 }
 roomForm.addEventListener("submit", async event => {
   event.preventDefault(); if (adminBusy || !adminUserId) return;
-  const name = adminById("edit-name"); name.setCustomValidity(name.value.trim() ? "" : "Enter a room name.");
+  const name = adminById("edit-name"); name.setCustomValidity(name.value.trim() ? "" : (globalThis.HotelI18n?.t("Enter a room name.") || "Enter a room name."));
   if (!roomForm.reportValidity()) return;
   const values = {
     name: name.value.trim(), slug: adminById("edit-slug").value.trim(),

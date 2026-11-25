@@ -92,7 +92,7 @@ form.addEventListener("submit", async event => {
   if (busy) return;
   const stay = stayDetails();
   if (!stay.guest) {
-    byId("guest").setCustomValidity("Enter the guest’s full name.");
+    byId("guest").setCustomValidity((globalThis.HotelI18n?.t("Enter the guest’s full name.") || "Enter the guest’s full name."));
     byId("guest").reportValidity(); return;
   }
   const price = quote(stay);

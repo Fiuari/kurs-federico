@@ -81,8 +81,8 @@ authForm.addEventListener("submit", async event => {
   event.preventDefault();
   if (requestRunning) return;
   if (registerMode) {
-    fullName.setCustomValidity(fullName.value.trim() ? "" : "Enter your full name.");
-    repeatPassword.setCustomValidity(authPassword.value === repeatPassword.value ? "" : "Passwords do not match.");
+    fullName.setCustomValidity(fullName.value.trim() ? "" : (globalThis.HotelI18n?.t("Enter your full name.") || "Enter your full name."));
+    repeatPassword.setCustomValidity(authPassword.value === repeatPassword.value ? "" : (globalThis.HotelI18n?.t("Passwords do not match.") || "Passwords do not match."));
     if (!authForm.reportValidity()) return;
   }
   busy(true);
