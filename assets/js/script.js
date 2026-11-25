@@ -19,6 +19,13 @@ header.querySelector(".main-menu").addEventListener("click", event => {
 
 // Accordion toggle (adds .open to the clicked .accordion-item)
 const accordionItems = document.querySelectorAll('.accordion-item');
+// The restaurant is expanded initially, as in the Figma homepage.
+const firstFacility = accordionItems[0];
+if (firstFacility) {
+  firstFacility.classList.add('open');
+  firstFacility.querySelector('.accordion-toggle')?.setAttribute('aria-expanded', 'true');
+}
+
 
 accordionItems.forEach(item => {
   const toggle = item.querySelector('.accordion-toggle');

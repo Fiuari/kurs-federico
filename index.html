@@ -4,15 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>practice federico</title>
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/polygons.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/burgermenu.css">
-    <link rel="stylesheet" href="assets/css/swiper.css">
-    <link rel="stylesheet" href="assets/css/accordion.css">
-    <link rel="stylesheet" href="assets/css/booking-entry.css">
-  <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/home.css">
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
   <script defer src="assets/js/api-config.js"></script>
   <script defer src="assets/js/supabase-client.js"></script>
@@ -20,7 +12,7 @@
   <script defer src="assets/js/rooms-public.js"></script>
   <script defer src="assets/js/home-rooms.js"></script>
 </head>
-<body>
+<body class="home-page">
     <div class="container">
         <header class="header p30 primary-color-bckg">
             <div class="logo white">BankHotel</div>
@@ -284,14 +276,14 @@
                     <div class="blyamba-gallery animate-on-scroll">
                             <svg viewBox="0 0 200 200" width="200" height="200" class="circle-text">
                                 <defs>
-                                    <path id="circlePath"
+                                    <path id="galleryCirclePath"
                                         d="M 100, 100
                                             m -75, 0
                                             a 75,75 0 1,1 150,0
                                             a 75,75 0 1,1 -150,0" />
                                 </defs>
                                 <text font-size="14" fill="#FFFCF6" letter-spacing="2">
-                                    <textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+                                    <textPath href="#galleryCirclePath" startOffset="50%" text-anchor="middle">
                                     PREMIUM ROOMS · BANK HOTEL
                                     </textPath>
                                 </text>
@@ -300,6 +292,7 @@
                     <h2 class="yellow animate-on-scroll">Our gallery</h2>
                     <p class="white animate-on-scroll">Explore our spacious rooms with the gorgeous view to the historical part of the city. Each room has an exclusive interior design decorated with modern art pieces that will make your stay unforgettable. </p>
                 </div>
+                <div class="gallery-grid">
                 <img src="assets/img/galleryone.png" alt="Gallery image 1" class="galone">
                 <img src="assets/img/gallerytwo.png" alt="Gallery image 2" class="galtwo animate-on-scroll">
                 <img src="assets/img/gallerythree.png" alt="Gallery image 3" class="galthree p30 animate-on-scroll">
@@ -323,6 +316,7 @@
                                 23.55,13.59" />
                         </svg>
                     <p class="white"><i>It is our pleasure to meet your most unrealistic expectations.</i></p>
+                </div>
                 </div>
                 <h6 class="gallery-decor">Bank hotel <span>Bank__hotel©</span> Bank hotel Bank hotel Bank<br>hotel Bank hotel  Bank hotel Bank  hotel Bank hotel Bank</h6>
             </section>
