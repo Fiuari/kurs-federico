@@ -6,8 +6,10 @@ const paymentMessage = document.getElementById("payment-message");
 let checkout = null;
 let paying = false;
 let paymentView = 0;
+dismissOnBackdrop(confirmation, () => !paying);
 
 function showSaved(booking) {
+  clearBookingForm();
   summary.textContent = bookingReceipt(booking, booking.rooms?.name || checkout?.roomName || "Room");
   pay.textContent = "Booking saved";
   pay.disabled = true;
@@ -28,7 +30,8 @@ async function showPayment() {
     const booking = await savedBooking(draft.id);
     if (view !== paymentView) return;
     checkout = draft;
-    back.href = "booking.html?room=" + encodeURIComponent(draft.room);
+    const formState = readBookingForm();
+    back.href = "booking.html?" + (formState?.userId === user.id ? formState.context : "room=" + encodeURIComponent(draft.room));
     if (booking) { showSaved(booking); return; }
     await loadInventory();
     if (view !== paymentView) return;

@@ -33,7 +33,7 @@ try {
       link.textContent = session ? "Account" : "Sign in";
     });
     if (event === "SIGNED_OUT") {
-      try { sessionStorage.removeItem("bankhotel.demo.checkout"); sessionStorage.removeItem("bankhotel.booking.checkout"); } catch {}
+      try { sessionStorage.removeItem("bankhotel.demo.checkout"); sessionStorage.removeItem("bankhotel.booking.checkout"); sessionStorage.removeItem("bankhotel.booking.form"); } catch {}
     }
     // Keep callbacks synchronous; Supabase calls must be made outside this handler.
     document.dispatchEvent(new CustomEvent("hotel-auth-change", { detail: { event, session } }));

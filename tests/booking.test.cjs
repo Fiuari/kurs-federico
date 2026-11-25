@@ -56,6 +56,7 @@ function scenario({ user = {id:'user-a',user_metadata:{full_name:'Guest'}}, fail
     },
     accountUrl:()=>new URL('https://example.test/auth.html?next=booking')
   });
+  vm.runInContext(code('dialogs'),context);
   vm.runInContext(code('booking-common'),context);
   const run = source => vm.runInContext(source, context);
   return {node,calls,state,run,context,events,windowEvents,storage,submit:()=>node('reservation').listeners.submit({preventDefault(){}})};

@@ -146,6 +146,7 @@ for (const id of ["refresh-rooms", "retry-access"]) adminById(id).addEventListen
 for (const id of ["close-editor", "cancel-editor"]) adminById(id).addEventListener("click", () => { if (!adminBusy) editor.close(); });
 adminById("cancel-delete").addEventListener("click", () => { if (!adminBusy) deleteDialog.close(); });
 for (const dialog of [editor, deleteDialog]) dialog.addEventListener("cancel", event => { if (adminBusy) event.preventDefault(); });
+for (const dialog of [editor, deleteDialog]) dismissOnBackdrop(dialog, () => !adminBusy);
 document.addEventListener("hotel-auth-change", ({ detail }) => {
   if (detail.event === "SIGNED_OUT" || (adminUserId && detail.session?.user.id !== adminUserId)) {
     ++accessVersion; hideManagement();

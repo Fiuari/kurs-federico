@@ -6,6 +6,17 @@ const checkoutTimes = ["08:00", "10:00", "12:00"];
 const money = new Intl.NumberFormat("en-GB", { style: "currency", currency: "UAH", maximumFractionDigits: 2 });
 const dateFormat = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 const paymentKey = "bankhotel.booking.checkout";
+const bookingFormKey = "bankhotel.booking.form";
+function clearBookingForm() { try { sessionStorage.removeItem(bookingFormKey); } catch {} }
+function readBookingForm() {
+  try {
+    const state = JSON.parse(sessionStorage.getItem(bookingFormKey));
+    if (state?.version !== 1 || typeof state.userId !== "string" || typeof state.open !== "boolean" ||
+        typeof state.context !== "string" || !state.stay ||
+        !["room", "arrival", "departure", "arrivalTime", "departureTime", "guest", "method"].every(key => typeof state.stay[key] === "string")) return null;
+    return state;
+  } catch { return null; }
+}
 const roomFor = slug => availableRooms.find(room => room.slug === slug);
 
 function calendarDays() {

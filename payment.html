@@ -16,6 +16,7 @@
   <script defer src="assets/js/supabase-client.js"></script>
   <script defer src="assets/js/auth-common.js"></script>
   <script defer src="assets/js/booking-common.js"></script>
+  <script defer src="assets/js/dialogs.js"></script>
   <script defer src="assets/js/payment.js"></script>
 </head>
 <body class="room-page reservation-page">
@@ -36,6 +37,7 @@
     <h2 id="success-title">Booking confirmed</h2>
     <p class="receipt"></p><p class="note">Your reservation has been saved to your account. No online payment has been collected.</p>
     <a class="primary" href="index.html#rooms">Back to rooms</a>
+    <button class="secondary" type="button" onclick="this.closest('dialog').close()">Done</button>
   </dialog>
 </body>
 </html>
