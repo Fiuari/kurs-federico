@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>practice federico</title>
+    <link rel="stylesheet" href="assets/css/sprite.css">
     <link rel="stylesheet" href="assets/css/home.css">
   <link rel="stylesheet" href="assets/css/i18n.css">
   <script defer src="assets/js/translations-uk.js"></script>
@@ -53,15 +54,13 @@
                     <h1>Bank<span class="yellow">Hotel</span></h1>
                     <p class="preview yellow">ROOMS // RESTAURANT // CONGRESS HALL // WINE BAR</p>
                     <div class="buttons animate-on-scroll">
-                        <img src="assets/img/icons/Star.png" alt="Hotel since 1973">
+                        <span class="sprite sprite-star" aria-hidden="true"></span>
                         <p class="white">Since 1973</p>
                     </div>
                      <p class="description white animate-on-scroll">The luxurious hotel in the most beautiful European city with an exclusive restaurant, conference-hall, and art-bar.</p>
                     <a href="booking.html" class="octagon poly-stroke-green animate-on-scroll" aria-label="Book room">
-                        <svg viewBox="0 0 100 100" class="polygon">
-                            <polygon points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30" />
-                        </svg>
-                        <img class="down animate-on-scroll" src="assets/img/icons/down.png" alt="Scroll down">
+                        <span class="polygon sprite sprite-octagon-outline" aria-hidden="true"></span>
+                        <span class="sprite sprite-down down animate-on-scroll" aria-hidden="true"></span>
                     </a>
                 </div>
                 <div class="enum-wrapper animate-on-scroll">
@@ -77,19 +76,7 @@
                         <button class="booking">Book room</button>
                     </form>
                     <a href="booking.html" class="decagon poly-booking">
-                        <svg viewBox="0 0 100 100" class="polygon">
-                            <polygon points="
-                                50,5 
-                                76.45,13.59 
-                                92.79,36.08 
-                                92.79,63.92 
-                                76.45,86.41 
-                                50,95 
-                                23.55,86.41 
-                                7.21,63.92 
-                                7.21,36.08 
-                                23.55,13.59" />
-                        </svg>
+                        <span class="polygon sprite sprite-decagon-gold" aria-hidden="true"></span>
 
                         <p>Book room</p>
                     </a>
@@ -113,7 +100,7 @@
                         <p class="white">The five-star Bank Hotel was reopened to visitors in 2016. The building was renovated and modernized to meet the expectations of the most demanding guests. We offer luxurious rooms, numerous facilities, and exceptional service. </p>
                     </div>
                     <div class="blyamba-wr animate-on-scroll">
-                        <div class="blyamba">
+                        <div class="blyamba"><span class="sprite sprite-flower seal-flower" aria-hidden="true"></span>
                             <svg viewBox="0 0 200 200" width="200" height="200" class="circle-text">
                                 <defs>
                                     <path id="circlePath"
@@ -132,22 +119,10 @@
                         <img src="assets/img/aboutustwo.png" alt="Bank Hotel overview and premium rooms">
                     </div>
                     <a href="#rooms" class="decagon poly-stroke-green double-poly animate-on-scroll">
-                        <svg viewBox="0 0 100 100" class="polygon">
-                            <polygon points="
-                                50,5 
-                                76.45,13.59 
-                                92.79,36.08 
-                                92.79,63.92 
-                                76.45,86.41 
-                                50,95 
-                                23.55,86.41 
-                                7.21,63.92 
-                                7.21,36.08 
-                                23.55,13.59" />
-                        </svg>
+                        <span class="polygon sprite sprite-decagon-outline" aria-hidden="true"></span>
 
                         <p class="white"><i class="yellow">Rooms</i><br><span class="tc">and</span><br>apartments</p>
-                        <img src="assets/img/icons/down.png" alt="Scroll to rooms" >
+                        <span class="sprite sprite-down" aria-hidden="true"></span>
                     </a>
 
                 </div>
@@ -169,16 +144,16 @@
   <button id="retry-rooms" class="catalogue-retry" type="button" hidden>Try again</button>
   <div class="swiper" id="room-slider" role="region" aria-roledescription="carousel" aria-label="Available rooms" aria-busy="true"></div>
   <div class="room-slider-controls" aria-label="Room navigation">
-    <button id="previous-room" type="button" aria-label="Previous room" disabled>←</button>
+    <button id="previous-room" type="button" aria-label="Previous room" disabled><span class="sprite sprite-right sprite-left" aria-hidden="true"></span></button>
     <p id="room-counter" aria-live="polite" aria-atomic="true">0 / 0</p>
-    <button id="next-room" type="button" aria-label="Next room" disabled>→</button>
+    <button id="next-room" type="button" aria-label="Next room" disabled><span class="sprite sprite-right" aria-hidden="true"></span></button>
   </div>
   <noscript>Enable JavaScript to view the current rooms and prices.</noscript>
   <!-- room-template:start -->
 <template id="public-room-card">
   <article class="rooms-wrapper">
     <img data-room-image class="pres-img" alt="" loading="lazy">
-    <div class="buttons"><img src="assets/img/icons/Star.png" alt="" width="35"><p>Since 1973</p></div>
+    <div class="buttons"><span class="sprite sprite-star" aria-hidden="true"></span><p>Since 1973</p></div>
     <div class="rooms-text-wrapper">
       <h3><a class="room-title-link" data-room-detail></a></h3>
       <p class="room-summary"></p><p class="room-price"></p>
@@ -186,7 +161,7 @@
     <div class="rooms-booking-wrapper">
       <a class="room-photo-link" data-room-detail><img data-room-image class="main-pres-img" alt=""></a>
       <a class="decagon poly-booking" data-book-room>
-        <svg viewBox="0 0 100 100" class="polygon" aria-hidden="true"><polygon points="50,5 76.45,13.59 92.79,36.08 92.79,63.92 76.45,86.41 50,95 23.55,86.41 7.21,63.92 7.21,36.08 23.55,13.59"/></svg>
+        <span class="polygon sprite sprite-decagon-gold" aria-hidden="true"></span>
         <p>Book room</p>
       </a>
     </div>
@@ -201,7 +176,7 @@
                 <div class="facilities-grid-wrapper">
                     <p class="inf animate-on-scroll">Art & Congress <br><i>hall</i></p>
                     <img src="assets/img/faciltwo.png" alt="Hotel facilities banner" class="facilimg animate-on-scroll">
-                    <h2 class="animate-on-scroll">Our<br>faci<br><span>lities</span></h2>
+                    <h2 class="animate-on-scroll">Our<br>faci<br><span>lities</span><i class="sprite sprite-star facilities-star" aria-hidden="true"></i></h2>
                     <p class="facilp animate-on-scroll">Bank Hotel offers you a wide range of additional services and facilities. Visit our restaurant to try exclusive meals, book a conference hall to organize a business meeting, or relax in the art-bar. </p>
                     <div class="img-with-blyamba animate-on-scroll">
                         <img src="assets/img/facilone.png" alt="Premium facilities illustration">
@@ -233,7 +208,7 @@
                             <a class="title facility-link" href="facilities/restaurant.html">Ice Restaurant</a>
                             <p id="restaurant-summary">A chef’s menu, an extensive wine list and live music set the mood for dinner at BankHotel. <a class="facility-details" href="facilities/restaurant.html">View details</a></p>
                             <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="restaurant-summary" aria-label="Ice Restaurant overview">
-                                <img src="assets/img/icons/right.png" alt="">
+                                <span class="sprite sprite-right" aria-hidden="true"></span>
                             </button>
                         </header>
                     </article>
@@ -246,7 +221,7 @@
                             <a class="title facility-link" href="facilities/conference-hall.html">Conference Hall</a>
                             <p id="conference-hall-summary">The conference hall brings modern technology and comfortable seating together for business meetings, seminars and larger events. <a class="facility-details" href="facilities/conference-hall.html">View details</a></p>
                             <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="conference-hall-summary" aria-label="Conference Hall overview">
-                                <img src="assets/img/icons/right.png" alt="">
+                                <span class="sprite sprite-right" aria-hidden="true"></span>
                             </button>
                         </header>
                     </article>
@@ -259,7 +234,7 @@
                             <a class="title facility-link" href="facilities/wine-bar.html">Wine Bar “Reserve”</a>
                             <p id="wine-bar-summary">A curated wine selection, signature cocktails and a relaxed bar setting make Reserve a place to spend the evening. <a class="facility-details" href="facilities/wine-bar.html">View details</a></p>
                             <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="wine-bar-summary" aria-label="Wine Bar “Reserve” overview">
-                                <img src="assets/img/icons/right.png" alt="">
+                                <span class="sprite sprite-right" aria-hidden="true"></span>
                             </button>
                         </header>
                     </article>
@@ -276,7 +251,7 @@
             <section class="our-gallery primary-color-bckg">
                 <p class="inf white animate-on-scroll">Art & Congress <br><i>hall</i></p>
                 <div class="gallery-title-wrapper">
-                    <div class="blyamba-gallery animate-on-scroll">
+                    <div class="blyamba-gallery animate-on-scroll"><span class="sprite sprite-flower seal-flower" aria-hidden="true"></span>
                             <svg viewBox="0 0 200 200" width="200" height="200" class="circle-text">
                                 <defs>
                                     <path id="galleryCirclePath"
@@ -305,19 +280,7 @@
                 <img src="assets/img/best.png" alt="Mobile gallery best apartments image" class="galtwomob animate-on-scroll">
                 <img src="assets/img/galthreemob.jpg" alt="Mobile gallery image 3" class="galthreemob">
                 <div class="gallery-prymit-wr decagon animate-on-scroll">
-                    <svg viewBox="0 0 100 100" class="polygon">
-                            <polygon points="
-                                50,5 
-                                76.45,13.59 
-                                92.79,36.08 
-                                92.79,63.92 
-                                76.45,86.41 
-                                50,95 
-                                23.55,86.41 
-                                7.21,63.92 
-                                7.21,36.08 
-                                23.55,13.59" />
-                        </svg>
+                    <span class="polygon sprite sprite-decagon-gold" aria-hidden="true"></span>
                     <p class="white"><i>It is our pleasure to meet your most unrealistic expectations.</i></p>
                 </div>
                 </div>
@@ -347,24 +310,12 @@
                     </form>
                 </div>
                 <a href="booking.html" class="decagon poly-booking animate-on-scroll">
-                        <svg viewBox="0 0 100 100" class="polygon">
-                            <polygon points="
-                                50,5 
-                                76.45,13.59 
-                                92.79,36.08 
-                                92.79,63.92 
-                                76.45,86.41 
-                                50,95 
-                                23.55,86.41 
-                                7.21,63.92 
-                                7.21,36.08 
-                                23.55,13.59" />
-                        </svg>
+                        <span class="polygon sprite sprite-decagon-gold" aria-hidden="true"></span>
 
                         <p>Book room</p>
                     </a>
                 </div>
-                <h2 class="git-title p30 animate-on-scroll">Get in<span class="yellow">touch</span></h2>
+                <h2 class="git-title p30 animate-on-scroll">Get in<span class="yellow">touch</span><i class="sprite sprite-star-large contact-star" aria-hidden="true"></i></h2>
                 <img src="assets/img/icons/wave.png" alt="Decorative wave" class="git-wave animate-on-scroll">
             </section>
 

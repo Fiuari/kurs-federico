@@ -21,7 +21,7 @@
 }
 .facility-lead { margin: clamp(2.4rem, 6vw, 7rem) 0 clamp(3.5rem, 11vw, 12rem); }
 .facility-lead p { position: relative; max-width: 32ch; }
-.facility-lead p img { position: absolute; top: -1.5rem; left: -3.2rem; width: 2rem; }
+.facility-lead p .sprite { position: absolute; top: -1.5rem; left: -3.2rem; --icon-size: 2rem; }
 .facility-photos img, .facility-feature img { width: 100%; object-fit: cover; }
 .facility-photos img:first-child { aspect-ratio: 1.54; }
 .facility-photos img:last-child { aspect-ratio: 1; }
@@ -44,7 +44,7 @@
 @media (max-width: 700px) {
   .facility-lead { grid-template-columns: 1fr; gap: 1.3rem; }
   .facility-lead p { padding-left: 2.25rem; max-width: 48ch; }
-  .facility-lead p img { top: .25rem; left: 0; width: 1.4rem; }
+  .facility-lead p .sprite { top: .25rem; left: 0; --icon-size: 1.4rem; }
   .facility-photos { grid-template-columns: 1.7fr 1fr; gap: .55rem; }
   .facility-photos img:first-child { aspect-ratio: .97; }
   .facility-feature { grid-template-columns: 1fr 1.7fr; column-gap: .75rem; }

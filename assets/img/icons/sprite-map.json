@@ -1,0 +1,75 @@
+{
+  "width": 1509,
+  "height": 644,
+  "icons": [
+    {
+      "name": "down",
+      "file": "down.png",
+      "x": 8,
+      "y": 8,
+      "width": 77,
+      "height": 44
+    },
+    {
+      "name": "up",
+      "file": "up.png",
+      "x": 101,
+      "y": 8,
+      "width": 77,
+      "height": 44
+    },
+    {
+      "name": "right",
+      "file": "right.png",
+      "x": 194,
+      "y": 8,
+      "width": 512,
+      "height": 512
+    },
+    {
+      "name": "star",
+      "file": "Star.png",
+      "x": 722,
+      "y": 8,
+      "width": 134,
+      "height": 140
+    },
+    {
+      "name": "star-large",
+      "file": "Starbig.png",
+      "x": 872,
+      "y": 8,
+      "width": 448,
+      "height": 446
+    },
+    {
+      "name": "flower",
+      "file": "flower.png",
+      "x": 1336,
+      "y": 8,
+      "width": 157,
+      "height": 158
+    },
+    {
+      "name": "octagon-outline",
+      "x": 8,
+      "y": 536,
+      "width": 100,
+      "height": 100
+    },
+    {
+      "name": "decagon-outline",
+      "x": 124,
+      "y": 536,
+      "width": 100,
+      "height": 100
+    },
+    {
+      "name": "decagon-gold",
+      "x": 240,
+      "y": 536,
+      "width": 100,
+      "height": 100
+    }
+  ]
+}

@@ -66,7 +66,7 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .preview { font-size: 11px; line-height: 1.6; text-align: center; }
 .description { max-width: 38ch; margin: 12px auto 0; font-size: 14px; line-height: 1.7; text-align: center; opacity: .85; }
 .buttons { display: inline-flex; align-items: center; gap: 16px; width: fit-content; padding: 14px 24px; border: 1px solid rgb(255 252 246 / 30%); border-radius: 50px; white-space: nowrap; }
-.buttons img { width: 28px; }
+.buttons .sprite { --icon-size: 28px; }
 .title-wrapper .buttons, .title-wrapper .octagon { display: none; }
 .enum-wrapper { position: relative; background: url('../img/hero.png') center / cover; height: clamp(400px, 80vw, 620px); display: flex; justify-content: flex-end; align-items: flex-end; }
 .enum-wrapper > .booking-form { display: none; }
@@ -80,17 +80,15 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .inf-wrapper .inf { text-align: left; }
 .inf-wrapper address, .inf-wrapper a { text-decoration: underline; text-underline-offset: 4px; }
 
-/* Polygon buttons use the SVG as their background, without pixel offsets. */
+/* Each polygon variant uses its own vector region of the shared CSS sprite. */
 .decagon, .octagon { position: relative; display: grid; place-items: center; width: 120px; aspect-ratio: 1; flex-shrink: 0; }
 .decagon > .polygon, .octagon > .polygon { position: absolute; inset: 0; width: 100%; height: 100%; }
-.poly-booking polygon { fill: var(--gold); }
 .poly-booking p { position: relative; z-index: 1; font-size: 14px; font-style: italic; color: var(--green); }
-.poly-stroke-green polygon { fill: none; stroke: rgb(255 252 246 / 35%); stroke-width: .5; }
 .poly-booking:hover { text-decoration: none; }
 .enum-wrapper > .poly-booking { margin: 14px; }
 .double-poly p { text-align: center; font-size: 14px; line-height: 1.4; padding-bottom: 16px; }
-.double-poly > img { position: absolute; width: 14px; bottom: 23%; }
-.down { width: 14px; position: relative; }
+.double-poly > .sprite-down { position: absolute; --icon-size: 14px; bottom: 23%; }
+.down { --icon-size: 14px; position: relative; }
 
 /* About */
 .about-us-section { position: relative; padding-block: 40px var(--space); overflow: clip; }
@@ -103,7 +101,8 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .blyamba-wr, .about-wrapper > .double-poly { display: none; }
 .decor-wrapper { pointer-events: none; position: absolute; inset: 0; }
 .eclipse { width: 75%; aspect-ratio: 1; border: 1px solid rgb(255 252 246 / 6%); border-radius: 50%; }
-.blyamba, .blyamba-gallery { background: url('../img/icons/flower.png') center / 30px no-repeat; }
+.blyamba, .blyamba-gallery { position: relative; }
+.seal-flower { --icon-size: 30px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .circle-text { width: 100%; height: 100%; }
 
 /* Live catalogue: all IDs and data attributes are retained for home-rooms.js. */
@@ -135,7 +134,7 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .our-facilities { padding-block: 48px var(--space); }
 .facilities-grid-wrapper { display: grid; gap: 36px; padding-block: 48px; border-top: 1px solid var(--line); }
 .facilities-grid-wrapper .inf { text-align: right; }
-.facilities-grid-wrapper h2 { grid-row: 2; width: fit-content; justify-self: center; font-size: clamp(64px, 10vw, 150px); line-height: .95; background: url('../img/icons/Star.png') 20% 90% / .3em no-repeat; }
+.facilities-grid-wrapper h2 { grid-row: 2; width: fit-content; justify-self: center; font-size: clamp(64px, 10vw, 150px); line-height: .95; position: relative; }
 .facilities-grid-wrapper h2 span { display: block; margin-left: 1em; }
 .facilimg { width: 60%; }
 .facilp { max-width: 35ch; justify-self: end; font-size: 15px; }
@@ -149,10 +148,10 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .number { font-size: 24px; }
 .title { font-size: clamp(26px, 4vw, 64px); overflow-wrap: anywhere; }
 .accordion-toggle { width: 44px; height: 44px; padding: 10px; border: 0; background: none; }
-.accordion-toggle img { transition: transform .2s; }
+.accordion-toggle .sprite { --icon-size: 24px; transition: transform .2s; }
 .accordion-item header > p { display: none; grid-column: 2 / -1; grid-row: 3; max-width: 42ch; font-size: 15px; }
 .accordion-item.open header > p { display: block; }
-.accordion-item.open .accordion-toggle img { transform: rotate(90deg); }
+.accordion-item.open .accordion-toggle .sprite { transform: rotate(90deg); }
 .facility-details { display: block; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
 
 /* Full-width photograph */
@@ -175,7 +174,6 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .gallery-grid .galthree, .gallery-grid .galfive, .gallery-grid .galonemob, .gallery-grid .galtwomob, .gallery-grid .galthreemob { display: none; }
 .gallery-prymit-wr { display: flex; grid-column: 1 / -1; gap: 24px; width: 100%; aspect-ratio: auto; max-width: 540px; margin: 12px auto 0; font-size: 15px; }
 .gallery-prymit-wr > .polygon { position: static; width: 44px; height: 44px; flex-shrink: 0; }
-.gallery-prymit-wr polygon { fill: var(--gold); }
 .gallery-decor { display: none; }
 
 /* Contact and footer */
@@ -243,6 +241,7 @@ footer { display: grid; gap: 40px; padding-block: 48px; border-top: 1px solid va
   .img-cell img { aspect-ratio: 1; }
   .accordion-item header > p { grid-column: 3; grid-row: 2; }
   .accordion-toggle { grid-column: 4; grid-row: 1; width: 60px; }
+  .accordion-toggle .sprite { --icon-size: 40px; }
   .number { font-size: 36px; }
   .best-apartments { min-height: 65vw; padding-block: 64px; }
   .best-apartments p { font-size: 20px; }
@@ -336,7 +335,6 @@ footer { display: grid; gap: 40px; padding-block: 48px; border-top: 1px solid va
   .gallery-grid { gap: 48px 8%; margin-top: 80px; }
   .gallery-grid .galtwo, .gallery-grid .galfour { margin-top: -60%; }
   .gallery-prymit-wr { font-size: 18px; }
-  .git-title { background: url('../img/icons/Starbig.png') 51% 25% / 100px no-repeat; }
   .git-img-wrapper address { font-size: 24px; }
   .git-wrapper > p { margin-top: 40px; font-size: 24px; }
   .git-enum-wrapper { max-width: 1100px; width: 75%; }
@@ -348,4 +346,15 @@ footer { display: grid; gap: 40px; padding-block: 48px; border-top: 1px solid va
   html { scroll-behavior: smooth; }
   .animate-on-scroll.visible { animation: reveal .55s ease both; }
   @keyframes reveal { from { opacity: .6; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+}
+
+/* Sprite placement mirrors the original individual images/backgrounds. */
+.room-slider-controls button { display: grid; place-items: center; padding: 12px; }
+.room-slider-controls .sprite { --icon-size: 28px; }
+.facilities-grid-wrapper h2 .facilities-star { --icon-size: .3em; position: absolute; left: calc(20% - .06em); top: calc(90% - .2820895522em); }
+.git-title { position: relative; }
+.git-title .contact-star { --icon-size: 100px; display: none; position: absolute; left: calc(51% - 51px); top: calc(25% - 24.8883928571px); margin: 0; }
+@media (min-width: 1200px) {
+  .room-slider-controls .sprite { --icon-size: 40px; }
+  .git-title .contact-star { display: block; }
 }
