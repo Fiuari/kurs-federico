@@ -4,42 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
+  <meta name="description" content="The requested BankHotel page could not be found. Return to the hotel website to explore rooms and make a reservation.">
   <title>404 · BankHotel</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      padding: 2rem 1rem;
-      background: #313f38;
-      color: #fffcf6;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-    h1 {
-      margin: 0;
-      color: #fcd043;
-      font: 400 clamp(6.5rem, 21vw, 17rem)/.9 Georgia, serif;
-      letter-spacing: -.065em;
-    }
-    p { margin: 1.5rem 0 2rem; font-size: clamp(1.15rem, 2.4vw, 1.75rem); }
-    a {
-      display: inline-block;
-      padding: .9rem 1.65rem;
-      border-radius: 2rem;
-      background: #fcd043;
-      color: #25362c;
-      text-decoration: none;
-    }
-    a:hover { background: #ffe17d; }
-    a:focus-visible { outline: 2px solid #fffcf6; outline-offset: 5px; }
-  </style>
   <script>
     (() => {
       const base = location.protocol === 'file:' ? new URL('.', location.href) : new URL(location.pathname.startsWith('/kurs-federico/') ? '/kurs-federico/' : '/', location.origin);
+      for (const file of ['assets/css/error.css']) { const sheet=document.createElement('link'); sheet.rel='stylesheet'; sheet.href=new URL(file,base); document.head.append(sheet); }
+      const icon=document.createElement('link'); icon.rel='icon'; icon.href=new URL('assets/img/favicon.svg?v=2',base); document.head.append(icon);
       const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = new URL('assets/css/i18n.css', base); document.head.append(css);
       const words = document.createElement('script'); words.src = new URL('assets/js/translations-uk.js', base);
       words.onload = () => { const script = document.createElement('script'); script.src = new URL('assets/js/i18n.js', base); document.head.append(script); };

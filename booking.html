@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Choose a BankHotel room, arrival and departure dates, guest details and payment method. Review availability and the total before confirming your booking.">
   <title>Book a room · BankHotel</title>
   <link rel="stylesheet" href="assets/css/sprite.css">
   <link rel="stylesheet" href="assets/css/default.css">
@@ -10,27 +11,30 @@
   <link rel="stylesheet" href="assets/css/booking.css">
   <link rel="stylesheet" href="assets/css/auth.css">
   <link rel="stylesheet" href="assets/css/i18n.css">
+  <script defer src="assets/js/images.js"></script>
+  <script defer src="assets/js/site.js"></script>
   <script defer src="assets/js/translations-uk.js"></script>
   <script defer src="assets/js/i18n.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="assets/js/vendor/supabase-2.119.2.js"></script>
   <script defer src="assets/js/api-config.js"></script>
   <script defer src="assets/js/supabase-client.js"></script>
   <script defer src="assets/js/auth-common.js"></script>
   <script defer src="assets/js/booking-common.js"></script>
   <script defer src="assets/js/dialogs.js"></script>
   <script defer src="assets/js/booking.js"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=2">
 </head>
 <body class="room-page reservation-page">
   <header class="masthead">
     <a class="brand" href="index.html">BankHotel</a>
-    <nav class="room-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#rooms">Rooms</a> <a data-account-link href="auth.html">Sign in</a></nav>
+    <nav class="room-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#rooms">Rooms</a><a href="facilities/restaurant.html">Restaurant</a><a href="booking.html">Booking</a><a href="about.html">About</a><a href="contacts.html">Contacts</a><a data-account-link href="auth.html">Sign in</a></nav>
     <a class="header-phone" href="tel:+380322975020">+38 032 297 50 20</a>
   </header>
   <main class="booking-layout">
     <div class="booking-copy">
       <a class="back" href="index.html#rooms">← Rooms &amp; apartments</a>
       <h1>Book your <em>stay</em></h1>
-      <h2 id="room-title"></h2>
+      <h2 id="room-title">Your room</h2>
       <p id="room-description"></p>
       <p class="rate"><strong id="room-rate"></strong> / night</p>
       <button class="primary" id="start" type="button" disabled>Start booking <span aria-hidden="true">↗</span></button>
@@ -39,7 +43,7 @@
       <button id="retry-booking" class="secondary" type="button" hidden>Try again</button>
       <noscript>Enable JavaScript to choose dates and book a room.</noscript>
     </div>
-    <img id="room-photo" class="booking-photo" src="assets/img/roomonemain.png" alt="Superior Twin bedroom">
+    <img id="room-photo" class="booking-photo" src="assets/img/optimized/roomonemain.png.webp" alt="Superior Twin bedroom" width="1938" height="2560">
   </main>
   <dialog id="booking-dialog" aria-labelledby="form-title">
     <form id="reservation">
@@ -47,12 +51,12 @@
         <h2 id="form-title">Your reservation</h2>
         <button class="close" type="button" aria-label="Close booking form">×</button>
       </div>
-      <label>Room<select id="room" required></select></label>
+      <label>Room<select id="room" required><option value="">Loading…</option></select></label>
       <div class="form-pair">
-        <label>Check-in date<select id="arrival" required></select></label>
-        <label>Check-out date<select id="departure" required></select></label>
-        <label>Arrival time<select id="arrival-time" required></select></label>
-        <label>Departure time<select id="departure-time" required></select></label>
+        <label>Check-in date<select id="arrival" required><option value="">Loading…</option></select></label>
+        <label>Check-out date<select id="departure" required><option value="">Loading…</option></select></label>
+        <label>Arrival time<select id="arrival-time" required><option value="">Loading…</option></select></label>
+        <label>Departure time<select id="departure-time" required><option value="">Loading…</option></select></label>
       </div>
       <label>Guest’s full name<input id="guest" autocomplete="name" maxlength="100" required></label>
       <fieldset><legend>Payment method</legend>

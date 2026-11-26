@@ -18,7 +18,7 @@ async function page(name, stored, blockStorage=false) {
   return dom;
 }
 (async()=>{
-  const pages=['index.html','auth.html','admin.html','booking.html','payment.html','room.html','rooms/superior-twin.html','rooms/cozy-single.html','rooms/deluxe-double.html','rooms/presidential-suite.html','facilities/restaurant.html','facilities/conference-hall.html','facilities/wine-bar.html','404.html'];
+  const pages=['index.html','about.html','contacts.html','auth.html','admin.html','booking.html','payment.html','room.html','rooms/superior-twin.html','rooms/cozy-single.html','rooms/deluxe-double.html','rooms/presidential-suite.html','facilities/restaurant.html','facilities/conference-hall.html','facilities/wine-bar.html','404.html'];
   for(const name of pages){
     const dom=await page(name),w=dom.window,d=w.document;
     assert.equal(d.querySelectorAll('[data-language-switch]').length,1,name+' switch');
@@ -41,15 +41,15 @@ async function page(name, stored, blockStorage=false) {
   assert.equal(d.documentElement.lang,'uk','restored session before page setup');
   const guest=d.getElementById('guest');guest.value='English Guest';
   const room=d.getElementById('room');room.append(new w.Option('Cozy Single','cozy-single'));room.value='cozy-single';
-  const date=d.getElementById('arrival');date.append(new w.Option('25 Nov 2026','2026-11-25'));
+  const date=d.getElementById('arrival');date.append(new w.Option('25 Nov 2026','2026-11-25'));date.value='2026-11-25';
   d.getElementById('breakdown').textContent='2 nights × UAH 2,400.00';
   d.getElementById('booking-status').textContent='Loading rooms and availability…';
   const receipt=d.querySelector('.receipt');
   const raw='Cozy Single · English Guest\n25 Nov 2026, 14:00 → 27 Nov 2026, 10:00\nDue at reception · UAH 4,800.00\nBooking reference: guest-id-123';
   receipt.textContent=raw;
   await tick();
-  assert.equal(room.options[0].textContent,'Затишний одномісний номер');
-  assert.match(date.options[0].textContent,/лист/);
+  assert.equal(room.selectedOptions[0].textContent,'Затишний одномісний номер');
+  assert.match(date.selectedOptions[0].textContent,/лист/);
   assert.match(d.getElementById('breakdown').textContent,/2 ночі/);
   assert.match(d.getElementById('booking-status').textContent,/Перевіряємо/);
   assert.equal(w.HotelI18n.originalText(receipt),raw,'receipt source remains English');
@@ -87,5 +87,5 @@ async function page(name, stored, blockStorage=false) {
   sw.close();
   const fresh=await page('index.html');assert.equal(fresh.window.document.documentElement.lang,'en','new session English');fresh.window.close();
   const blocked=await page('index.html',null,true);blocked.window.HotelI18n.setLanguage('uk');assert.equal(blocked.window.document.documentElement.lang,'uk','storage failure is handled');blocked.window.close();
-  console.log('PASS: 14 pages, EN↔UK round trips, saved/new/blocked session, dynamic text and attributes, dates/prices/plurals, unchanged form values/links, custom validation, receipts and safe text rendering.');
+  console.log('PASS: 16 pages, EN↔UK round trips, saved/new/blocked session, dynamic text and attributes, dates/prices/plurals, unchanged form values/links, custom validation, receipts and safe text rendering.');
 })().catch(error=>{console.error(error);process.exitCode=1;});

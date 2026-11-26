@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review your BankHotel reservation and complete the demonstration payment step. No money is charged; the confirmed booking is saved to your account.">
+  <meta name="robots" content="noindex">
   <title>Demo payment · BankHotel</title>
   <link rel="stylesheet" href="assets/css/sprite.css">
   <link rel="stylesheet" href="assets/css/default.css">
@@ -10,18 +12,21 @@
   <link rel="stylesheet" href="assets/css/booking.css">
   <link rel="stylesheet" href="assets/css/auth.css">
   <link rel="stylesheet" href="assets/css/i18n.css">
+  <script defer src="assets/js/images.js"></script>
+  <script defer src="assets/js/site.js"></script>
   <script defer src="assets/js/translations-uk.js"></script>
   <script defer src="assets/js/i18n.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="assets/js/vendor/supabase-2.119.2.js"></script>
   <script defer src="assets/js/api-config.js"></script>
   <script defer src="assets/js/supabase-client.js"></script>
   <script defer src="assets/js/auth-common.js"></script>
   <script defer src="assets/js/booking-common.js"></script>
   <script defer src="assets/js/dialogs.js"></script>
   <script defer src="assets/js/payment.js"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=2">
 </head>
 <body class="room-page reservation-page">
-  <header class="masthead"><a class="brand" href="index.html">BankHotel</a><nav class="room-nav" aria-label="Main navigation"><a href="index.html#rooms">Rooms</a> <a data-account-link href="auth.html">Sign in</a></nav></header>
+  <header class="masthead"><a class="brand" href="index.html">BankHotel</a><nav class="room-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#rooms">Rooms</a><a href="facilities/restaurant.html">Restaurant</a><a href="booking.html">Booking</a><a href="about.html">About</a><a href="contacts.html">Contacts</a><a data-account-link href="auth.html">Sign in</a></nav></header>
   <main class="payment-wrap">
     <a class="back" href="booking.html" id="back">← Back to booking</a>
     <h1>Online <em>payment</em></h1>

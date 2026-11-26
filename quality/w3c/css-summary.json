@@ -1,0 +1,102 @@
+[
+  {
+    "file": "assets/css/admin.css",
+    "sha256": "31298d2230b949793ba5aa8e6e76236d20d78bd5ff0806c8b2a74a7a4bba5280",
+    "checked_utc": "2026-11-26T14:25:23.562928+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 2,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/auth.css",
+    "sha256": "85e085840c67af49adfc8028b7df1c5b086efe7f471d77b74e3d3c3d0ba9d926",
+    "checked_utc": "2026-11-26T14:25:25.116409+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 1,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/booking.css",
+    "sha256": "a62025744117b35ab2c6de4eee2cbf999d0f2655f527a370b563108dfc8cb4f0",
+    "checked_utc": "2026-11-26T14:25:26.676555+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 5,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/default.css",
+    "sha256": "292ed1cdc151487a8ebeaac39b4c80adb85bbb8b2997766ea1280f7c86256bc9",
+    "checked_utc": "2026-11-26T14:25:28.229822+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 1,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/error.css",
+    "sha256": "5b7106ddaf8bc1c1b54af6d52ece1a5e0cf9d58f9cc22c9686be470f821063cd",
+    "checked_utc": "2026-11-26T14:25:29.538351+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 0,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/facility.css",
+    "sha256": "00061fb8be7459567c20b71b5e8fa04ceb6f21e7c4fcb54979835dc1d1d7a4b0",
+    "checked_utc": "2026-11-26T14:25:30.847208+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 3,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/home.css",
+    "sha256": "b419f9ffa0e5883ad6e3cc8bb90dde9c0cfc35f610cf710ce99f93ffc5a35a29",
+    "checked_utc": "2026-11-26T14:25:32.419554+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 4,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/i18n.css",
+    "sha256": "d2df19834da3323ec313c361e015368b4680b1694dd430e215bbeadcf9725504",
+    "checked_utc": "2026-11-26T14:25:34.042269+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 0,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/room.css",
+    "sha256": "a3bbc72f9ada9bb70a2760ec2ff4b5b0835ce8cae7947101bbccbdc3e58aae09",
+    "checked_utc": "2026-11-26T14:25:35.580326+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 0,
+    "status": "checked"
+  },
+  {
+    "file": "assets/css/sprite.css",
+    "sha256": "9c2de84e4be70a15a7e18da867084641dfb827a997757515973081c6d6f0fe5c",
+    "checked_utc": "2026-11-26T14:25:37.037086+00:00",
+    "validator": "https://jigsaw.w3.org/css-validator/validator",
+    "profile": "css3svg",
+    "errors": 0,
+    "warnings": 1,
+    "status": "checked"
+  }
+]

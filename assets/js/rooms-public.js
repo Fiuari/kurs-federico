@@ -11,6 +11,7 @@ function roomBookingUrl(slug) {
   url.searchParams.set("room", slug); return url.href;
 }
 function roomImageUrl(filename) {
+  if (globalThis.HotelImages) return HotelImages.url(filename, publicRoomsRoot);
   const safe = /^[a-zA-Z0-9][a-zA-Z0-9._-]*\.(png|jpe?g|webp|avif)$/i.test(filename || "");
   return new URL("assets/img/" + (safe ? filename : "hero.png"), publicRoomsRoot).href;
 }

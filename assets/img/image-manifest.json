@@ -1,0 +1,127 @@
+{
+  "aboutusone.png": {
+    "file": "optimized/aboutusone.png.webp",
+    "width": 1818,
+    "height": 2550
+  },
+  "aboutustwo.png": {
+    "file": "optimized/aboutustwo.png.webp",
+    "width": 942,
+    "height": 1242
+  },
+  "best.png": {
+    "file": "optimized/best.png.webp",
+    "width": 2560,
+    "height": 1440
+  },
+  "facilbar.png": {
+    "file": "optimized/facilbar.png.webp",
+    "width": 852,
+    "height": 852
+  },
+  "facilhall.png": {
+    "file": "optimized/facilhall.png.webp",
+    "width": 852,
+    "height": 852
+  },
+  "facilone.png": {
+    "file": "optimized/facilone.png.webp",
+    "width": 1329,
+    "height": 858
+  },
+  "facilrestaurant.png": {
+    "file": "optimized/facilrestaurant.png.webp",
+    "width": 1800,
+    "height": 2547
+  },
+  "faciltwo.png": {
+    "file": "optimized/faciltwo.png.webp",
+    "width": 1329,
+    "height": 858
+  },
+  "galleryfive.png": {
+    "file": "optimized/galleryfive.png.webp",
+    "width": 1329,
+    "height": 852
+  },
+  "galleryfour.png": {
+    "file": "optimized/galleryfour.png.webp",
+    "width": 936,
+    "height": 1200
+  },
+  "galleryone.png": {
+    "file": "optimized/galleryone.png.webp",
+    "width": 2560,
+    "height": 1677
+  },
+  "gallerythree.png": {
+    "file": "optimized/gallerythree.png.webp",
+    "width": 855,
+    "height": 1158
+  },
+  "gallerytwo.png": {
+    "file": "optimized/gallerytwo.png.webp",
+    "width": 936,
+    "height": 852
+  },
+  "galthreemob.jpg": {
+    "file": "optimized/galthreemob.jpg.webp",
+    "width": 2560,
+    "height": 1708
+  },
+  "getintouch.png": {
+    "file": "optimized/getintouch.png.webp",
+    "width": 1329,
+    "height": 1329
+  },
+  "hall.jpg": {
+    "file": "optimized/hall.jpg.webp",
+    "width": 1737,
+    "height": 2560
+  },
+  "hero.png": {
+    "file": "optimized/hero.png.webp",
+    "width": 2560,
+    "height": 1075
+  },
+  "roomfourmain.jpg": {
+    "file": "optimized/roomfourmain.jpg.webp",
+    "width": 1200,
+    "height": 1800
+  },
+  "roomfourside.jpg": {
+    "file": "optimized/roomfourside.jpg.webp",
+    "width": 1200,
+    "height": 1800
+  },
+  "roomonemain.png": {
+    "file": "optimized/roomonemain.png.webp",
+    "width": 1938,
+    "height": 2560
+  },
+  "roomoneside.png": {
+    "file": "optimized/roomoneside.png.webp",
+    "width": 855,
+    "height": 1017
+  },
+  "roomthreemain.webp": {
+    "file": "optimized/roomthreemain.webp.webp",
+    "width": 2048,
+    "height": 1366
+  },
+  "roomthreeside.webp": {
+    "file": "optimized/roomthreeside.webp.webp",
+    "width": 1707,
+    "height": 2560
+  },
+  "roomtwomain.webp": {
+    "file": "optimized/roomtwomain.webp.webp",
+    "width": 1024,
+    "height": 683
+  },
+  "roomtwoside.webp": {
+    "file": "optimized/roomtwoside.webp.webp",
+    "width": 1853,
+    "height": 2560
+  }
+}

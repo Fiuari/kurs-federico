@@ -3,28 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage BankHotel rooms: view availability, add rooms, update descriptions and prices. This area is available to authorised hotel administrators.">
   <meta name="robots" content="noindex">
-  <title>Manage rooms · BankHotel</title>
+  <title>Room administration · BankHotel</title>
   <link rel="stylesheet" href="assets/css/sprite.css">
   <link rel="stylesheet" href="assets/css/default.css">
   <link rel="stylesheet" href="assets/css/room.css">
   <link rel="stylesheet" href="assets/css/auth.css">
   <link rel="stylesheet" href="assets/css/admin.css">
   <link rel="stylesheet" href="assets/css/i18n.css">
+  <script defer src="assets/js/images.js"></script>
+  <script defer src="assets/js/site.js"></script>
   <script defer src="assets/js/translations-uk.js"></script>
   <script defer src="assets/js/i18n.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="assets/js/vendor/supabase-2.119.2.js"></script>
   <script defer src="assets/js/api-config.js"></script>
   <script defer src="assets/js/supabase-client.js"></script>
   <script defer src="assets/js/auth-common.js"></script>
   <script defer src="assets/js/admin-api.js"></script>
   <script defer src="assets/js/dialogs.js"></script>
   <script defer src="assets/js/admin.js"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=2">
 </head>
 <body class="room-page admin-page">
   <header class="masthead">
     <a class="brand" href="index.html">BankHotel</a>
-    <nav class="room-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="booking.html">Booking</a><a data-account-link href="auth.html?next=admin">Account</a></nav>
+    <nav class="room-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#rooms">Rooms</a><a href="facilities/restaurant.html">Restaurant</a><a href="booking.html">Booking</a><a href="about.html">About</a><a href="contacts.html">Contacts</a><a data-account-link href="auth.html">Sign in</a></nav>
   </header>
   <main class="admin-layout">
     <p class="eyebrow">BankHotel · Administration</p>
@@ -55,10 +59,10 @@
       <p class="admin-note" id="slug-help">Lowercase Latin letters, digits and hyphens. The address stays the same after creation so booking links keep working.</p>
       <label>Description<textarea id="edit-description" rows="4" maxlength="5000"></textarea></label>
       <label>Price per night (UAH)<input id="edit-price" type="number" min="0.01" max="99999999.99" step="0.01" required></label>
-      <label>Room photo<select id="edit-image" required>
+      <label>Room photo<select id="edit-image" required><option value="">Choose a photo</option>
         <option value="roomonemain.png">Superior Twin interior</option><option value="roomtwomain.webp">Deluxe Double interior</option><option value="roomthreemain.webp">Presidential Suite interior</option><option value="roomfourmain.jpg">Cozy Single interior</option>
       </select></label>
-      <img id="image-preview" class="admin-preview" src="assets/img/roomonemain.png" alt="Selected room photo">
+      <img id="image-preview" class="admin-preview" src="assets/img/optimized/roomonemain.png.webp" alt="Selected room photo" width="1938" height="2560">
       <label>Photo description<input id="edit-alt" maxlength="300" placeholder="A bright bedroom with a double bed"></label>
       <label class="check-label"><input id="edit-active" type="checkbox" checked> Available for booking</label>
       <p id="editor-status" role="status"></p>

@@ -1,0 +1,21 @@
+{
+  "name": "bankhotel-coursework",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node optimize-images.cjs && node build-sprite.cjs && node generate-pages.js",
+    "test": "node scripts/test.cjs",
+    "test:server": "npm --prefix server test",
+    "test:security": "node tests/admin-security.cjs",
+    "validate:w3c": "python scripts/validate-w3c.py all"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.3.14",
+    "css-tree": "3.2.1",
+    "jsdom": "26.1.0",
+    "sharp": "0.35.5"
+  }
+}

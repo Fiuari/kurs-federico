@@ -4,6 +4,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const legacyRooms = require("./data/rooms");
 const facilities = require("./data/facilities");
+const imageManifest = require("./assets/img/image-manifest.json");
 const root = __dirname;
 const read = file => fs.readFileSync(path.join(root, file), "utf8");
 const entities = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
@@ -24,11 +25,11 @@ function replaceCards(home, section, items) {
 }
 const files = new Map();
 const roomTemplate = read("templates/room.html");
-files.set("room.html", render(roomTemplate, { base: "", slug: "" }));
+files.set("room.html", render(roomTemplate, { base: "", slug: "", pageTitle: "Room details · BankHotel", pageDescription: "Explore BankHotel rooms in Lviv, view photos and current prices, and choose dates for your stay. Room availability is updated when you book." }));
 // Keep previously shared URLs working. These contain no stale room content.
-for (const { slug } of legacyRooms) {
+for (const { slug, name, description } of legacyRooms) {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error("Invalid legacy room slug");
-  files.set(`rooms/${slug}.html`, render(roomTemplate, { base: "../", slug }));
+  files.set(`rooms/${slug}.html`, render(roomTemplate, { base: "../", slug, pageTitle: name + " · BankHotel", pageDescription: description }));
 }
 const facilityCards = [];
 for (const [i, facility] of facilities.entries()) {
@@ -39,7 +40,16 @@ for (const [i, facility] of facilities.entries()) {
 let home = replaceCards(read("index.html"), "room-template", [read("templates/room-card.html").trimEnd()]);
 home = replaceCards(home, "facility-cards", facilityCards);
 files.set("index.html", home);
-for (const [file, html] of files) {
+for (const [file, source] of files) {
+  const html = source.replace(/<img\b[^>]*>/g, tag => {
+    const match = tag.match(/src="([^" ]*assets\/img\/)([^"/]+)"/);
+    const image = match && imageManifest[match[2]];
+    if (!image) return tag;
+    let result = tag.replace(match[1] + match[2], match[1] + image.file).replace(/\s(?:width|height)="[^"]*"/g, '');
+    result = result.slice(0, -1) + ` width="${image.width}" height="${image.height}">`;
+    if (!/loading=|fetchpriority=|data-room-image/.test(result)) result = result.slice(0, -1) + ' loading="lazy" decoding="async">';
+    return result;
+  });
   const target = path.join(root, file);
   fs.mkdirSync(path.dirname(target), { recursive: true });
   if (!fs.existsSync(target) || read(file) !== html) fs.writeFileSync(target, html);

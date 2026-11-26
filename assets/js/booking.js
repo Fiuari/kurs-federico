@@ -66,8 +66,10 @@ function updateRoom() {
   if (!selected) return;
   byId("room-title").textContent = selected.name;
   byId("room-description").textContent = selected.description;
-  byId("room-photo").src = "assets/img/" + selected.image_file;
-  byId("room-photo").alt = selected.image_alt;
+  const photo = byId("room-photo");
+  photo.onerror = () => { photo.onerror = null; photo.src = globalThis.HotelImages ? HotelImages.url("hero.png", hotelRoot) : "assets/img/hero.png"; photo.alt = "BankHotel interior"; };
+  photo.src = globalThis.HotelImages ? HotelImages.url(selected.image_file, hotelRoot) : "assets/img/" + encodeURIComponent(selected.image_file);
+  byId("room-photo").alt = selected.image_alt || selected.name;
   byId("room-rate").textContent = money.format(selected.price_per_night);
   options(arrivalTime, arrivalTimes);
   options(departureTime, checkoutTimes);

@@ -1,7 +1,7 @@
 [hidden] { display: none !important; }
 .account-layout {
   max-width: 1350px; margin: auto; padding: clamp(2rem, 5vw, 5rem) var(--edge);
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 8vw, 8rem);
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 8vw, 8rem);
 }
 .account-intro h1 { font-size: clamp(3.5rem, 6vw, 7rem); line-height: 1; letter-spacing: -.03em; margin-bottom: 2rem; }
 .account-intro em { color: #89661a; }
@@ -25,21 +25,8 @@
 #registration-note { font-size: .85rem; }
 .masthead .room-nav { flex-wrap: wrap; }
 .masthead { flex-wrap: wrap; }
-@media(max-width:700px) {
-  .account-layout { grid-template-columns: 1fr; }
-  .account-intro img { display: none; }
-  .account-intro h1 { font-size: 3.5rem; margin-bottom: 0; }
-}
-
-/* Keep account access visible even when the main navigation is collapsed. */
-.header .header-account {
-  order: 2; flex-shrink: 0; color: #fcd043; border: 1px solid #fcd043;
-  padding: .65rem 1rem; font-size: 16px; line-height: 1.2; text-decoration: none;
-}
-.header .header-account:hover { background: #fcd043; color: #313f38; }
-.header .header-account:focus-visible { outline: 2px solid #fffcf6; outline-offset: 4px; }
-.header .mobile-menu { order: 1; }
-.header .burger { order: 3; flex-shrink: 0; }
-@media(max-width:1919px) {
-  .header .header-account { margin-left: auto; margin-right: clamp(1rem, 3vw, 3rem); }
+ .account-intro img { display: none; }
+@media (min-width: 701px) {
+  .account-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .account-intro img { display: block; }
 }

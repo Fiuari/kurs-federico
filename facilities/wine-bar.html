@@ -11,22 +11,21 @@
   <link rel="stylesheet" href="../assets/css/facility.css">
   <link rel="stylesheet" href="../assets/css/auth.css">
   <link rel="stylesheet" href="../assets/css/i18n.css">
+  <script defer src="../assets/js/images.js"></script>
+  <script defer src="../assets/js/site.js"></script>
   <script defer src="../assets/js/translations-uk.js"></script>
   <script defer src="../assets/js/i18n.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="../assets/js/vendor/supabase-2.119.2.js"></script>
   <script defer src="../assets/js/api-config.js"></script>
   <script defer src="../assets/js/supabase-client.js"></script>
   <script defer src="../assets/js/auth-common.js"></script>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg?v=2">
 </head>
 <body class="room-page facility-page">
   <a class="skip" href="#facility">Skip to facility</a>
   <header class="masthead">
     <a class="brand" href="../index.html">BankHotel</a>
-    <nav class="room-nav" aria-label="Main navigation">
-      <a href="../index.html">Home</a>
-      <a href="../index.html#facilities">Facilities</a>
-      <a href="#contact">Contact</a>
-     <a data-account-link href="../auth.html">Sign in</a></nav>
+    <nav class="room-nav" aria-label="Main navigation"><a href="../index.html">Home</a><a href="../index.html#rooms">Rooms</a><a href="../facilities/restaurant.html">Restaurant</a><a href="../booking.html">Booking</a><a href="../about.html">About</a><a href="../contacts.html">Contacts</a><a data-account-link href="../auth.html">Sign in</a></nav>
     <a class="header-phone" href="tel:+380322975020">+38 032 297 50 20</a>
   </header>
   <main id="facility">
@@ -39,8 +38,8 @@
         </div>
       </header>
       <div class="facility-photos">
-        <img src="../assets/img/facilbar.png" alt="Bar counter lined with wooden stools and shelves of bottles" fetchpriority="high">
-        <img src="../assets/img/getintouch.png" alt="Lounge chair beside a small table at BankHotel">
+        <img src="../assets/img/optimized/facilbar.png.webp" alt="Bar counter lined with wooden stools and shelves of bottles" fetchpriority="high" width="852" height="852">
+        <img src="../assets/img/optimized/getintouch.png.webp" alt="Lounge chair beside a small table at BankHotel" width="1329" height="1329" loading="lazy" decoding="async">
       </div>
       <section class="facility-service">
         <h2>By the glass</h2>
@@ -48,8 +47,8 @@
       </section>
       <section class="facility-feature">
         <h2>A slower pace after dinner</h2>
-        <img class="detail-photo" src="../assets/img/gallerythree.png" alt="A table set for dinner at BankHotel" loading="lazy">
-        <img class="feature-photo" src="../assets/img/facilbar.png" alt="A wider view along the counter at Reserve" loading="lazy">
+        <img class="detail-photo" src="../assets/img/optimized/gallerythree.png.webp" alt="A table set for dinner at BankHotel" loading="lazy" width="855" height="1158">
+        <img class="feature-photo" src="../assets/img/optimized/facilbar.png.webp" alt="A wider view along the counter at Reserve" loading="lazy" width="852" height="852">
         <div class="feature-text">
           <h3>Join us at the bar</h3>
           <p>Call BankHotel to ask about visiting Reserve or arranging an evening with friends.</p>
@@ -62,7 +61,7 @@
         <p>8 Lystopadovoho Chynu,<br>Lviv, Ukraine</p>
       </div>
       <div class="contact-art">
-        <img src="../assets/img/getintouch.png" alt="" loading="lazy">
+        <img src="../assets/img/optimized/getintouch.png.webp" alt="" loading="lazy" width="1329" height="1329">
         <h2 id="contact-title">Get in <em>touch</em></h2>
       </div>
       <a class="outline-link" href="tel:+380322975020">Enquire about the bar <span aria-hidden="true">↗</span></a>

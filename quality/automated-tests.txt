@@ -1,0 +1,63 @@
+
+> bankhotel-coursework@1.0.0 test
+> node scripts/test.cjs
+
+
+admin-api.test.cjs
+PASS: role check, signed-out denial, immutable address, create ID, write errors, missing delete, protected booking error. API responses mocked.
+
+booking.test.cjs
+Passed: occupancy boundaries, room isolation, server-owned identity/total, failed write, retry ID, guest redirect, desk success, online draft/save/reload, account change. Supabase mocked; SQL not executed here.
+
+dialogs.test.cjs
+PASS: backdrop/padding/drag, close button, busy/Escape guard, open/closed reload, draft/account isolation, stale dates, successful/interrupted booking, storage failure, retry and Back after payment. API mocked.
+
+i18n.test.cjs
+PASS: 16 pages, EN↔UK round trips, saved/new/blocked session, dynamic text and attributes, dates/prices/plurals, unchanged form values/links, custom validation, receipts and safe text rendering.
+
+public-rooms.test.cjs
+PASS: GitHub Pages URLs, safe images, search, both sort orders, empty results, active-only detail, invalid slug, network failure and current database content.
+
+room-page.test.cjs
+PASS: brand-new room without generated HTML, updated fields, safe text rendering, booking URL, missing/inactive room state and retryable network failure. Responses mocked.
+
+site-quality.test.cjs
+16 pages: metadata, local assets/anchors, CSS syntax and mobile menu passed.
+
+sprite.test.cjs
+PASS: six PNGs preserved byte-for-byte, vector polygon variants, non-overlapping atlas, nested paths, generated pages and dynamic room cards/slider. API mocked.
+
+> bankhotel-coursework@1.0.0 test:security
+> node tests/admin-security.cjs
+
+PASS: migrations rerun, anonymous/member denial, no self-promotion, admin CRUD, inactive visibility, immutable address, positive price, booking ownership/price, FK delete protection, immediate role revocation. Isolated PostgreSQL with simulated auth.uid(), not live Supabase.
+
+> bankhotel-coursework@1.0.0 test:server
+> npm --prefix server test
+
+
+> bankhotel-api@1.0.0 test
+> node --test test/*.test.js
+
+TAP version 13
+# Subtest: browser sends data through API, attaching tokens only for authenticated routes
+ok 1 - browser sends data through API, attaching tokens only for authenticated routes
+  ---
+  duration_ms: 3.4896
+  type: 'test'
+  ...
+# Subtest: API protects routes, validates writes and forwards per-user identity
+ok 2 - API protects routes, validates writes and forwards per-user identity
+  ---
+  duration_ms: 134.4288
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 410.3686

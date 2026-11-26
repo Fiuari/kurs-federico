@@ -26,11 +26,12 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1.4rem var(--edge);
+  padding: 1.15rem var(--edge);
 }
 .masthead { background: var(--green); color: var(--paper); }
 .brand { font-size: 1.3rem; letter-spacing: -.055em; text-decoration: none; }
-.room-nav { display: flex; gap: clamp(1rem, 3vw, 3rem); }
+.room-nav { display: flex; flex-wrap: wrap; gap: .9rem; }
+.header-phone { display: none; }
 .room-nav a, .header-phone, .return-link {
   font-size: .8rem;
   text-decoration: none;
@@ -42,10 +43,10 @@
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: 1fr auto;
-  gap: 2rem;
-  min-height: clamp(32rem, 47vw, 58rem);
+  gap: 1rem;
+  min-height: 34rem;
   padding: clamp(1.8rem, 3vw, 4rem) var(--edge);
   overflow: hidden;
   background: var(--green);
@@ -57,7 +58,7 @@
   width: 100%;
   height: 100%;
 }
-.hero-photo { z-index: -2; object-fit: cover; object-position: 50% 54%; }
+.hero-photo { z-index: -2; object-fit: cover; object-position: 57% center; }
 .room-hero::before {
   content: "";
   z-index: -1;
@@ -65,7 +66,7 @@
 }
 .room-hero h1 {
   grid-column: 1 / -1;
-  font-size: clamp(5.2rem, 8.6vw, 11rem);
+  font-size: clamp(3.45rem, 12vw, 5.2rem);
   line-height: .94;
   letter-spacing: -.045em;
 }
@@ -90,7 +91,7 @@
   text-decoration: none;
 }
 .room-seal:hover, .room-seal:focus-visible { text-decoration: underline; }
-.inner { width: min(81%, 96rem); margin-inline: auto; }
+.inner { width: calc(100% - 2 * var(--edge)); margin-inline: auto; }
 .room-intro { padding-top: clamp(4rem, 9vw, 11rem); background: var(--green); color: var(--paper); }
 .since, .outline-link {
   display: inline-flex;
@@ -103,8 +104,8 @@
 .since { border-color: rgb(255 252 246 / 35%); font-size: .9rem; }
 .intro-copy {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  gap: 12%;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
   margin: clamp(2.5rem, 5vw, 6rem) 0 clamp(4rem, 8vw, 10rem);
 }
 .intro-copy h2, .details h2 {
@@ -113,44 +114,45 @@
 }
 .intro-copy p, .details p { max-width: 47ch; line-height: 1.6; }
 .bedroom figcaption { color: var(--gold); font-size: clamp(1.3rem, 2vw, 2.4rem); margin-bottom: 2rem; }
-.bedroom img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
+.bedroom img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .details {
   padding-block: clamp(4rem, 10vw, 12rem);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 18%;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: 2rem;
   row-gap: 2rem;
 }
 .details img { width: 100%; object-fit: cover; margin-bottom: 1.8rem; }
 .bath img { aspect-ratio: 1; }
+.vanity { width: 82%; justify-self: end; }
 .vanity img { aspect-ratio: 3 / 4; }
 .details h2 { margin-bottom: 1rem; }
 .outline-link { width: fit-content; text-decoration: none; text-transform: uppercase; font-size: .88rem; }
 .outline-link:hover { background: var(--green); color: var(--paper); }
 .room-contact { border-top: 1px solid #c4c6ba; padding: clamp(3rem, 6vw, 7rem) var(--edge); }
-.contact-meta { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+.contact-meta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 1rem; }
 .contact-meta p { text-transform: uppercase; font-size: .85rem; line-height: 1.4; }
 .contact-phone { font-size: clamp(1.25rem, 2.8vw, 3rem); text-decoration-thickness: 1px; text-underline-offset: .2em; }
 .contact-art { position: relative; margin: 2rem 0; padding-block: 2rem; }
-.contact-art img { width: 26%; margin-left: auto; margin-right: 7%; aspect-ratio: 4 / 3; object-fit: cover; }
+.contact-art img { width: 40%; margin-left: auto; margin-right: 0; aspect-ratio: 4 / 3; object-fit: cover; }
 .contact-art h2 { position: absolute; bottom: 0; font-size: clamp(4rem, 12.2vw, 15rem); text-transform: uppercase; line-height: .95; }
 .contact-art em { color: #8b6418; font-weight: normal; }
 .room-footer { border-top: 1px solid #c4c6ba; }
 
-@media (max-width: 700px) {
-  .masthead, .room-footer { padding-block: 1.15rem; }
-  .header-phone { display: none; }
-  .room-nav { gap: .9rem; }
-  .room-nav a, .return-link { font-size: .72rem; }
-  .room-hero { min-height: 34rem; gap: 1rem; }
-  .room-hero h1 { font-size: clamp(3.45rem, 12vw, 5.2rem); }
-  .hero-photo { object-position: 57% center; }
-  .inner { width: calc(100% - 2 * var(--edge)); }
-  .intro-copy, .details { grid-template-columns: 1fr; gap: 2rem; }
-  .bedroom img { aspect-ratio: 4 / 3; }
-  .vanity { width: 82%; justify-self: end; }
-  .contact-meta { flex-wrap: wrap; }
-  .contact-art img { width: 40%; margin-right: 0; }
+@media (min-width: 701px) {
+  .masthead, .room-footer { padding-block: 1.4rem; }
+  .header-phone { display: block; }
+  .room-nav { gap: clamp(1rem, 3vw, 3rem); }
+  .room-nav a, .return-link { font-size: .8rem; }
+  .room-hero { min-height: clamp(32rem, 47vw, 58rem); gap: 2rem; }
+  .room-hero h1 { font-size: clamp(5.2rem, 8.6vw, 11rem); }
+  .hero-photo { object-position: 50% 54%; }
+  .inner { width: min(81%, 96rem); }
+  .intro-copy { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 12%; }
+  .details { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 18%; }
+  .bedroom img { aspect-ratio: 2 / 1; }
+  .vanity { width: auto; justify-self: stretch; }
+  .contact-art img { width: 26%; margin-right: 7%; }
 }
 
 .room-state { padding: 4rem var(--edge); min-height: 55vh; }
@@ -161,3 +163,27 @@
 #room-description { white-space: pre-line; overflow-wrap: anywhere; }
 
 .since .sprite-star { --icon-size: 28px; --icon-height: 28px; }
+
+/* Mobile navigation is enhanced only when site.js is available. */
+.masthead { flex-wrap: wrap; }
+.masthead .brand { margin-right: auto; }
+.masthead .language-switch { order: 1; }
+.nav-toggle { display: none; order: 2; width: 44px; height: 44px; border: 1px solid #fcd043; background: transparent; color: #fcd043; padding: 10px; cursor: pointer; }
+.nav-toggle span { display: block; height: 1px; margin: 6px 0; background: currentColor; }
+.nav-ready .nav-toggle { display: block; }
+.nav-ready .room-nav { display: none; order: 3; width: 100%; flex-direction: column; }
+.nav-ready.nav-open .room-nav { display: flex; }
+.room-nav a { padding-block: .4rem; }
+.room-footer { flex-wrap: wrap; }
+@media (min-width: 1000px) {
+  .nav-ready .nav-toggle { display: none; }
+  .nav-ready .room-nav { display: flex; flex-direction: row; width: auto; order: 0; gap: 1.25rem; }
+  .masthead .brand { margin-right: 0; }
+}
+
+.info-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; padding: clamp(2rem, 5vw, 5rem) var(--edge); }
+.info-copy h1 { font-size: clamp(2.8rem, 6vw, 6rem); line-height: 1.05; margin-bottom: 2rem; }
+.info-copy h2 { font-size: clamp(2rem, 3vw, 3rem); margin: 2rem 0 1rem; }
+.info-copy p, .info-copy address { line-height: 1.65; margin-bottom: 1.5rem; }
+.info-photo { width: 100%; height: auto; max-height: 44rem; object-fit: cover; }
+@media (min-width: 701px) { .info-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5vw; } }

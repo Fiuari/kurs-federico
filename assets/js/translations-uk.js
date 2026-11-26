@@ -152,3 +152,18 @@ window.HOTEL_UK = {
   "The reception desk at BankHotel": "Стійка рецепції BankHotel", "Superior Twin bedroom with an upholstered headboard and a pendant lamp": "Спальня покращеного двомісного номера з м’яким узголів’ям і підвісною лампою",
   "/ night": "/ ніч", "practice federico": "BankHotel — готель у Львові"
 };
+
+Object.assign(window.HOTEL_UK, {
+  "Booking": "Бронювання",
+  "About BankHotel": "Про BankHotel",
+  "Contact BankHotel": "Контакти BankHotel",
+  "Visit us": "Завітайте до нас",
+  "View on map": "Показати на карті",
+  "Plan your stay": "Заплануйте відпочинок",
+  "Room details": "Інформація про номер",
+  "About us · BankHotel": "Про нас · BankHotel",
+  "Contacts · BankHotel": "Контакти · BankHotel",
+  "Rooms & booking · BankHotel": "Номери й бронювання · BankHotel"
+});
+
+Object.assign(window.HOTEL_UK, {"Loading…": "Завантаження…", "Choose a photo": "Оберіть фото", "8 Lystopadovoho Chynu, Lviv, Ukraine": "вул. Листопадового Чину, 8, Львів, Україна", "Room administration": "Керування номерами"});

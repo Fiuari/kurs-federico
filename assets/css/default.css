@@ -5,7 +5,8 @@
 }
 @font-face {
     font-family: 'Miracle';
-    src: url('../fonts/Miracle.otf') format('truetype');  /* Шлях до файлу шрифту */
+    src: url('../fonts/Miracle.otf') format('opentype');
+    font-display: swap;
     font-weight: normal;
     font-style: normal;
 }
@@ -35,3 +36,11 @@ h1, h2, h3, h4, h5, h6 {
 .yellow {
     color: #FCD043;
 }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 0; }
+main, section, article, div, header, footer, nav, form, fieldset { min-width: 0; }
+h1, h2, h3, p, a, strong, label { overflow-wrap: anywhere; }
+button, input, select, textarea { font: inherit; max-width: 100%; }
+button, a, input, select, textarea { touch-action: manipulation; }
+:focus-visible { outline: 3px solid #b48c24; outline-offset: 3px; }

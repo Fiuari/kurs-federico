@@ -20,6 +20,7 @@ html[lang="uk"] .home-page .facilities-grid-wrapper h2 { font-size: clamp(56px, 
 html[lang="uk"] .home-page .git-title { font-size: clamp(44px, 9vw, 174px); }
 html[lang="uk"] .home-page .rooms-text-wrapper h3 { font-size: clamp(28px, 2.8vw, 46px); }
 html[lang="uk"] .home-page .title { font-size: clamp(24px, 3.5vw, 60px); }
+html[lang="uk"] .room-hero h1 { font-size: clamp(2.6rem, 8.5vw, 9rem); }
 html[lang="uk"] .room-seal { font-size: 14px; }
 html[lang="uk"] .room-page h1, html[lang="uk"] .room-page h2, html[lang="uk"] .room-page h3 { overflow-wrap: anywhere; }
 html[lang="uk"] .reservation-page h1, html[lang="uk"] .account-intro h1 { font-size: clamp(2.1rem, 5.5vw, 6rem); }

@@ -68,7 +68,7 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .buttons { display: inline-flex; align-items: center; gap: 16px; width: fit-content; padding: 14px 24px; border: 1px solid rgb(255 252 246 / 30%); border-radius: 50px; white-space: nowrap; }
 .buttons .sprite { --icon-size: 28px; }
 .title-wrapper .buttons, .title-wrapper .octagon { display: none; }
-.enum-wrapper { position: relative; background: url('../img/hero.png') center / cover; height: clamp(400px, 80vw, 620px); display: flex; justify-content: flex-end; align-items: flex-end; }
+.enum-wrapper { position: relative; background: url('../img/optimized/hero.png.webp') center / cover; height: clamp(400px, 80vw, 620px); display: flex; justify-content: flex-end; align-items: flex-end; }
 .enum-wrapper > .booking-form { display: none; }
 .booking-form { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; }
 .home-date { display: grid; gap: 8px; padding: 20px; text-transform: uppercase; font-size: 12px; line-height: 1.4; }
@@ -96,7 +96,7 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .about-wrapper > h2 { grid-row: 1; width: fit-content; text-align: right; font-size: clamp(60px, 8vw, 150px); color: var(--gold); }
 .about-wrapper > img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .abus-text-wr { max-width: 440px; margin-left: auto; }
-.abus-text-wr h5 { font-size: clamp(30px, 3vw, 50px); margin-bottom: 24px; }
+.abus-text-wr h3 { font-size: clamp(30px, 3vw, 50px); margin-bottom: 24px; }
 .abus-text-wr p { font-size: 15px; opacity: .8; }
 .blyamba-wr, .about-wrapper > .double-poly { display: none; }
 .decor-wrapper { pointer-events: none; position: absolute; inset: 0; }
@@ -155,7 +155,7 @@ a:hover { text-decoration: underline; text-underline-offset: .2em; }
 .facility-details { display: block; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
 
 /* Full-width photograph */
-.best-apartments { position: relative; min-height: 560px; padding-block: 60px; display: flex; flex-direction: column; justify-content: space-between; gap: 160px; background: url('../img/best.png') center / cover; overflow: clip; }
+.best-apartments { position: relative; min-height: 560px; padding-block: 60px; display: flex; flex-direction: column; justify-content: space-between; gap: 160px; background: url('../img/optimized/best.png.webp') center / cover; overflow: clip; }
 .best-apartments h2 { position: relative; z-index: 1; font-size: clamp(44px, 8vw, 150px); }
 .best-apartments p { position: relative; z-index: 1; font-size: 17px; line-height: 1.35; text-transform: uppercase; max-width: 24ch; }
 .wave { position: absolute; bottom: 8%; left: 0; width: 100%; pointer-events: none; }
@@ -358,3 +358,6 @@ footer { display: grid; gap: 40px; padding-block: 48px; border-top: 1px solid va
   .room-slider-controls .sprite { --icon-size: 40px; }
   .git-title .contact-star { display: block; }
 }
+
+footer h2.footertitle { font: inherit; font-size: 18px; text-transform: none; }
+.footer-booking { display: inline-block; padding: 12px 20px; border: 1px solid currentColor; }

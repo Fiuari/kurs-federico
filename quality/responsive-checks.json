@@ -1,0 +1,206 @@
+{
+  "checked": "2026-11-26",
+  "browser": "Chromium (in-app browser)",
+  "checks": [
+    {
+      "broken": [],
+      "h1": "BankHotel",
+      "lang": "uk",
+      "path": "/index.html",
+      "scroll": 305,
+      "width": 320
+    },
+    {
+      "broken": [],
+      "h1": "Ваш номер",
+      "lang": "uk",
+      "path": "/room.html",
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "broken": [],
+      "h1": "Ресторан Ice",
+      "lang": "uk",
+      "path": "/facilities/restaurant.html",
+      "scroll": 305,
+      "width": 320
+    },
+    {
+      "broken": [],
+      "h1": "Про BankHotel",
+      "lang": "uk",
+      "path": "/about.html",
+      "scroll": 305,
+      "width": 320
+    },
+    {
+      "broken": [],
+      "h1": "Контакти BankHotel",
+      "lang": "uk",
+      "path": "/contacts.html",
+      "scroll": 305,
+      "width": 320
+    },
+    {
+      "broken": [],
+      "h1": "Керування номерами",
+      "lang": "uk",
+      "path": "/admin.html",
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "broken": [],
+      "h1": "Онлайн оплата",
+      "lang": "uk",
+      "path": "/payment.html",
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "broken": [],
+      "h1": "404",
+      "lang": "uk",
+      "path": "/404.html",
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "lang": "uk",
+      "path": "/index.html",
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "lang": "uk",
+      "path": "/auth.html",
+      "scroll": 390,
+      "width": 390
+    },
+    {
+      "lang": "uk",
+      "path": "/booking.html",
+      "scroll": 390,
+      "width": 390
+    },
+    {
+      "lang": "uk",
+      "path": "/room.html",
+      "scroll": 390,
+      "width": 390
+    },
+    {
+      "lang": "uk",
+      "path": "/facilities/restaurant.html",
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "lang": "uk",
+      "path": "/about.html",
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "lang": "uk",
+      "path": "/contacts.html",
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "lang": "uk",
+      "path": "/index.html",
+      "scroll": 753,
+      "width": 768
+    },
+    {
+      "lang": "uk",
+      "path": "/auth.html",
+      "scroll": 768,
+      "width": 768
+    },
+    {
+      "lang": "uk",
+      "path": "/booking.html",
+      "scroll": 768,
+      "width": 768
+    },
+    {
+      "lang": "uk",
+      "path": "/room.html",
+      "scroll": 768,
+      "width": 768
+    },
+    {
+      "lang": "uk",
+      "path": "/facilities/restaurant.html",
+      "scroll": 753,
+      "width": 768
+    },
+    {
+      "lang": "uk",
+      "path": "/about.html",
+      "scroll": 768,
+      "width": 768
+    },
+    {
+      "lang": "uk",
+      "path": "/contacts.html",
+      "scroll": 768,
+      "width": 768
+    },
+    {
+      "lang": "uk",
+      "path": "/index.html",
+      "scroll": 1425,
+      "width": 1440
+    },
+    {
+      "lang": "uk",
+      "path": "/auth.html",
+      "scroll": 1440,
+      "width": 1440
+    },
+    {
+      "lang": "uk",
+      "path": "/booking.html",
+      "scroll": 1440,
+      "width": 1440
+    },
+    {
+      "lang": "uk",
+      "path": "/room.html",
+      "scroll": 1440,
+      "width": 1440
+    },
+    {
+      "lang": "uk",
+      "path": "/facilities/restaurant.html",
+      "scroll": 1425,
+      "width": 1440
+    },
+    {
+      "lang": "uk",
+      "path": "/about.html",
+      "scroll": 1425,
+      "width": 1440
+    },
+    {
+      "lang": "uk",
+      "path": "/contacts.html",
+      "scroll": 1425,
+      "width": 1440
+    }
+  ],
+  "functional": [
+    "Inner menu opens; navigation preserves UK",
+    "Guest booking redirects to auth",
+    "Live API returns 4 rooms",
+    "Search with zero results",
+    "Descending price and next slide",
+    "EN/UK switching and reload persistence",
+    "Signed-out admin denied",
+    "Loaded room at 320px without overflow or broken images"
+  ]
+}

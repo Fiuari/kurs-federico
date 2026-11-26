@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice federico</title>
+    <meta name="description" content="Discover BankHotel in Lviv: rooms, restaurant, conference hall and wine bar. Choose your dates, view room availability and book your stay online.">
+  <title>Rooms &amp; booking · BankHotel</title>
     <link rel="stylesheet" href="assets/css/sprite.css">
     <link rel="stylesheet" href="assets/css/home.css">
   <link rel="stylesheet" href="assets/css/i18n.css">
+  <script defer src="assets/js/images.js"></script>
+  <script defer src="assets/js/site.js"></script>
   <script defer src="assets/js/translations-uk.js"></script>
   <script defer src="assets/js/i18n.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.2/dist/umd/supabase.js"></script>
+  <script defer src="assets/js/vendor/supabase-2.119.2.js"></script>
   <script defer src="assets/js/api-config.js"></script>
   <script defer src="assets/js/supabase-client.js"></script>
   <script defer src="assets/js/auth-common.js"></script>
   <script defer src="assets/js/rooms-public.js"></script>
   <script defer src="assets/js/home-rooms.js"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=2">
 </head>
 <body class="home-page">
     <div class="container">
@@ -41,9 +45,9 @@
             </div>
             <p class="adress-h white">8 Lystopadovoho Chynu, Lviv</p>
             <ul class="socials-h">
-                <li><a href="404.html" class="white">Facebook</a></li>
-                <li><a href="404.html" class="white">Instagram</a></li>
-                <li><a href="404.html" class="white">Twitter</a></li>
+                <li><a href="about.html" class="white">About</a></li>
+                <li><a href="contacts.html" class="white">Contacts</a></li>
+                <li><a href="booking.html" class="white">Booking</a></li>
             </ul>
             </div>
         </header>
@@ -93,10 +97,10 @@
 
             <section id="about" class="about-us-section primary-color-bckg">
                 <div class="about-wrapper p30">
-                    <img src="assets/img/aboutusone.png" alt="About Bank Hotel" class="animate-on-scroll">
+                    <img src="assets/img/optimized/aboutusone.png.webp" alt="About Bank Hotel" class="animate-on-scroll" width="1818" height="2550" loading="lazy" decoding="async">
                     <h2 class="white animate-on-scroll"><span class="yellow">about</span><br>us</h2>
                     <div class="abus-text-wr animate-on-scroll">
-                        <h5 class="white">High quality</h5>
+                        <h3 class="white">High quality</h3>
                         <p class="white">The five-star Bank Hotel was reopened to visitors in 2016. The building was renovated and modernized to meet the expectations of the most demanding guests. We offer luxurious rooms, numerous facilities, and exceptional service. </p>
                     </div>
                     <div class="blyamba-wr animate-on-scroll">
@@ -116,7 +120,7 @@
                                 </text>
                             </svg>
                         </div>
-                        <img src="assets/img/aboutustwo.png" alt="Bank Hotel overview and premium rooms">
+                        <img src="assets/img/optimized/aboutustwo.png.webp" alt="Bank Hotel overview and premium rooms" width="942" height="1242" loading="lazy" decoding="async">
                     </div>
                     <a href="#rooms" class="decagon poly-stroke-green double-poly animate-on-scroll">
                         <span class="polygon sprite sprite-decagon-outline" aria-hidden="true"></span>
@@ -143,7 +147,7 @@
   <p id="rooms-status" role="status">Loading rooms…</p>
   <button id="retry-rooms" class="catalogue-retry" type="button" hidden>Try again</button>
   <div class="swiper" id="room-slider" role="region" aria-roledescription="carousel" aria-label="Available rooms" aria-busy="true"></div>
-  <div class="room-slider-controls" aria-label="Room navigation">
+  <div class="room-slider-controls" role="group" aria-label="Room navigation">
     <button id="previous-room" type="button" aria-label="Previous room" disabled><span class="sprite sprite-right sprite-left" aria-hidden="true"></span></button>
     <p id="room-counter" aria-live="polite" aria-atomic="true">0 / 0</p>
     <button id="next-room" type="button" aria-label="Next room" disabled><span class="sprite sprite-right" aria-hidden="true"></span></button>
@@ -175,11 +179,11 @@
             <section class="our-facilities secondary-color-bckg p30">
                 <div class="facilities-grid-wrapper">
                     <p class="inf animate-on-scroll">Art & Congress <br><i>hall</i></p>
-                    <img src="assets/img/faciltwo.png" alt="Hotel facilities banner" class="facilimg animate-on-scroll">
+                    <img src="assets/img/optimized/faciltwo.png.webp" alt="Hotel facilities banner" class="facilimg animate-on-scroll" width="1329" height="858" loading="lazy" decoding="async">
                     <h2 class="animate-on-scroll">Our<br>faci<br><span>lities</span><i class="sprite sprite-star facilities-star" aria-hidden="true"></i></h2>
                     <p class="facilp animate-on-scroll">Bank Hotel offers you a wide range of additional services and facilities. Visit our restaurant to try exclusive meals, book a conference hall to organize a business meeting, or relax in the art-bar. </p>
                     <div class="img-with-blyamba animate-on-scroll">
-                        <img src="assets/img/facilone.png" alt="Premium facilities illustration">
+                        <img src="assets/img/optimized/facilone.png.webp" alt="Premium facilities illustration" width="1329" height="858" loading="lazy" decoding="async">
                         <svg viewBox="0 0 200 200" width="200" height="200" class="blyamba-next">
                             <defs>
                                 <path id="blyambaCircle"
@@ -202,10 +206,10 @@
                     <article class="accordion-item animate-on-scroll">
                         <header>
                             <div class="img-cell">
-                                <img class="accordion-icon" src="assets/img/facilrestaurant.png" alt="Daylit dining room with a long counter and tables along the windows">
+                                <img class="accordion-icon" src="assets/img/optimized/facilrestaurant.png.webp" alt="Daylit dining room with a long counter and tables along the windows" width="1800" height="2547" loading="lazy" decoding="async">
                             </div>
                             <span class="number">01</span>
-                            <a class="title facility-link" href="facilities/restaurant.html">Ice Restaurant</a>
+                            <h3 class="title"><a class="facility-link" href="facilities/restaurant.html">Ice Restaurant</a></h3>
                             <p id="restaurant-summary">A chef’s menu, an extensive wine list and live music set the mood for dinner at BankHotel. <a class="facility-details" href="facilities/restaurant.html">View details</a></p>
                             <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="restaurant-summary" aria-label="Ice Restaurant overview">
                                 <span class="sprite sprite-right" aria-hidden="true"></span>
@@ -215,10 +219,10 @@
                     <article class="accordion-item animate-on-scroll">
                         <header>
                             <div class="img-cell">
-                                <img class="accordion-icon" src="assets/img/hall.jpg" alt="Open interior with lounge seating and floor-to-ceiling windows">
+                                <img class="accordion-icon" src="assets/img/optimized/hall.jpg.webp" alt="Open interior with lounge seating and floor-to-ceiling windows" width="1737" height="2560" loading="lazy" decoding="async">
                             </div>
                             <span class="number">02</span>
-                            <a class="title facility-link" href="facilities/conference-hall.html">Conference Hall</a>
+                            <h3 class="title"><a class="facility-link" href="facilities/conference-hall.html">Conference Hall</a></h3>
                             <p id="conference-hall-summary">The conference hall brings modern technology and comfortable seating together for business meetings, seminars and larger events. <a class="facility-details" href="facilities/conference-hall.html">View details</a></p>
                             <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="conference-hall-summary" aria-label="Conference Hall overview">
                                 <span class="sprite sprite-right" aria-hidden="true"></span>
@@ -228,10 +232,10 @@
                     <article class="accordion-item animate-on-scroll">
                         <header>
                             <div class="img-cell">
-                                <img class="accordion-icon" src="assets/img/facilbar.png" alt="Bar counter lined with wooden stools and shelves of bottles">
+                                <img class="accordion-icon" src="assets/img/optimized/facilbar.png.webp" alt="Bar counter lined with wooden stools and shelves of bottles" width="852" height="852" loading="lazy" decoding="async">
                             </div>
                             <span class="number">03</span>
-                            <a class="title facility-link" href="facilities/wine-bar.html">Wine Bar “Reserve”</a>
+                            <h3 class="title"><a class="facility-link" href="facilities/wine-bar.html">Wine Bar “Reserve”</a></h3>
                             <p id="wine-bar-summary">A curated wine selection, signature cocktails and a relaxed bar setting make Reserve a place to spend the evening. <a class="facility-details" href="facilities/wine-bar.html">View details</a></p>
                             <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="wine-bar-summary" aria-label="Wine Bar “Reserve” overview">
                                 <span class="sprite sprite-right" aria-hidden="true"></span>
@@ -271,20 +275,20 @@
                     <p class="white animate-on-scroll">Explore our spacious rooms with the gorgeous view to the historical part of the city. Each room has an exclusive interior design decorated with modern art pieces that will make your stay unforgettable. </p>
                 </div>
                 <div class="gallery-grid">
-                <img src="assets/img/galleryone.png" alt="Gallery image 1" class="galone">
-                <img src="assets/img/gallerytwo.png" alt="Gallery image 2" class="galtwo animate-on-scroll">
-                <img src="assets/img/gallerythree.png" alt="Gallery image 3" class="galthree p30 animate-on-scroll">
-                <img src="assets/img/galleryfour.png" alt="Gallery image 4" width="20%" class="galfour animate-on-scroll">
-                <img src="assets/img/galleryfive.png" alt="Gallery image 5" width="20%" class="galfive p30 animate-on-scroll">
-                <img src="assets/img/aboutusone.png" alt="Mobile gallery about image" class="galonemob animate-on-scroll">
-                <img src="assets/img/best.png" alt="Mobile gallery best apartments image" class="galtwomob animate-on-scroll">
-                <img src="assets/img/galthreemob.jpg" alt="Mobile gallery image 3" class="galthreemob">
+                <img src="assets/img/optimized/galleryone.png.webp" alt="Gallery image 1" class="galone" width="2560" height="1677" loading="lazy" decoding="async">
+                <img src="assets/img/optimized/gallerytwo.png.webp" alt="Gallery image 2" class="galtwo animate-on-scroll" width="936" height="852" loading="lazy" decoding="async">
+                <img src="assets/img/optimized/gallerythree.png.webp" alt="Gallery image 3" class="galthree p30 animate-on-scroll" width="855" height="1158" loading="lazy" decoding="async">
+                <img src="assets/img/optimized/galleryfour.png.webp" alt="Gallery image 4" class="galfour animate-on-scroll" width="936" height="1200" loading="lazy" decoding="async">
+                <img src="assets/img/optimized/galleryfive.png.webp" alt="Gallery image 5" class="galfive p30 animate-on-scroll" width="1329" height="852" loading="lazy" decoding="async">
+                <img src="assets/img/optimized/aboutusone.png.webp" alt="Mobile gallery about image" class="galonemob animate-on-scroll" width="1818" height="2550" loading="lazy" decoding="async">
+                <img src="assets/img/optimized/best.png.webp" alt="Mobile gallery best apartments image" class="galtwomob animate-on-scroll" width="2560" height="1440" loading="lazy" decoding="async">
+                <img src="assets/img/optimized/galthreemob.jpg.webp" alt="Mobile gallery image 3" class="galthreemob" width="2560" height="1708" loading="lazy" decoding="async">
                 <div class="gallery-prymit-wr decagon animate-on-scroll">
                     <span class="polygon sprite sprite-decagon-gold" aria-hidden="true"></span>
                     <p class="white"><i>It is our pleasure to meet your most unrealistic expectations.</i></p>
                 </div>
                 </div>
-                <h6 class="gallery-decor">Bank hotel <span>Bank__hotel©</span> Bank hotel Bank hotel Bank<br>hotel Bank hotel  Bank hotel Bank  hotel Bank hotel Bank</h6>
+                <p class="gallery-decor">Bank hotel <span>Bank__hotel©</span> Bank hotel Bank hotel Bank<br>hotel Bank hotel  Bank hotel Bank  hotel Bank hotel Bank</p>
             </section>
 
             <section id="contacts" class="get-in-touch secondary-color-bckg">
@@ -293,7 +297,7 @@
 
                     <div class="git-img-wrapper">
                     <address class="animate-on-scroll">8 Lystopadovoho <br>Chynu, Lviv</address>
-                    <img src="assets/img/getintouch.png" alt="Contact section image" width="70%" class="animate-on-scroll">
+                    <img src="assets/img/optimized/getintouch.png.webp" alt="Contact section image" class="animate-on-scroll" width="1329" height="1329" loading="lazy" decoding="async">
                     </div>
                     <p class="p30 animate-on-scroll">Find a room</p>
                     <div class="git-enum-wrapper p30 animate-on-scroll">
@@ -323,27 +327,22 @@
 
         <footer class="secondary-color-bckg p30">
             <section class="footsec animate-on-scroll">
-                <span class="footertitle"><span class="yellow">/</span>About Us</span>
+                <h2 class="footertitle"><span class="yellow">/</span>About Us</h2>
                 <p class="p">The five-star hotel in a beautiful European city with a modern restaurant, conference-hall, and art-bar.</p>
                 <p class="copyright">©2021 All rights reserved. BankHotel.</p>
             </section>
             <section class="footsec animate-on-scroll">
-                <span class="footertitle"><span class="yellow">/</span>News</span>
-                <p>Sign up to our newsletter not to miss exclusive offers and information about the upcoming events.</p>
-                <form class="newsletter" action="404.html" method="get">
-                <div class="input-wrapper">
-                    <input type="email" id="email" placeholder="Email" required>
-                    <button type="submit" aria-label="Subscribe">➝</button>
-                </div>
-                </form>
+                <h2 class="footertitle"><span class="yellow">/</span>Plan your stay</h2>
+                <p>Choose your dates to see availability and the total price for your stay.</p>
+                <a class="footer-booking" href="booking.html">Book room</a>
             </section>
             <section class="footsec animate-on-scroll">
-                <span class="footertitle"><span class="yellow">/</span>Social</span>
+                <h2 class="footertitle"><span class="yellow">/</span>Contacts</h2>
                 <nav>
                 <ul>
-                    <li><a href="404.html">Facebook</a></li>
-                    <li><a href="404.html">Instagram</a></li>
-                    <li><a href="404.html">Twitter</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="tel:+380322975020">+38 032 297 50 20</a></li>
                 </ul>
                 </nav>
             </section>

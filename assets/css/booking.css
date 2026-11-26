@@ -1,12 +1,12 @@
 .reservation-page { min-height: 100vh; }
 .booking-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 7rem);
   padding: clamp(2rem, 4vw, 5rem) var(--edge);
 }
 .booking-copy { align-self: center; max-width: 43rem; }
-.booking-photo { width: 100%; height: clamp(29rem, 73vh, 56rem); object-fit: cover; }
+.booking-photo { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .reservation-page .back { display: inline-block; font-size: .9rem; text-underline-offset: .25em; }
 .reservation-page h1 { margin: 2rem 0; font-size: clamp(3.8rem, 7.8vw, 9rem); letter-spacing: -.045em; line-height: .96; }
 .reservation-page h1 em { color: #82631e; }
@@ -29,7 +29,7 @@ dialog::backdrop { background: rgb(18 30 22 / 70%); }
 .dialog-head, .total { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .dialog-head { margin-bottom: 1.2rem; }
 .close { width: 2.5rem; height: 2.5rem; background: transparent; border: 1px solid #9aab9c; border-radius: 50%; font-size: 1.45rem; cursor: pointer; color: inherit; }
-.form-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 1rem; }
+.form-pair { display: grid; grid-template-columns: minmax(0,1fr); gap: 0 1rem; }
 #reservation label, #reservation legend { font-size: .9rem; }
 #reservation > label, .form-pair label { display: grid; gap: .35rem; margin-bottom: .85rem; }
 #reservation select, #guest { width: 100%; min-width: 0; font: inherit; color: inherit; padding: .65rem .45rem; border: 1px solid #889489; border-radius: 0; background: #fffefa; }
@@ -41,9 +41,10 @@ dialog::backdrop { background: rgb(18 30 22 / 70%); }
 .receipt { white-space: pre-line; line-height: 1.6; margin: 1rem 0; overflow-wrap: anywhere; }
 .payment-wrap { max-width: 50rem; margin: auto; padding: 3rem var(--edge); }
 .payment-card { border-block: 1px solid #9ca79d; padding: 2rem 0; }
-@media(max-width:700px) {
-  .booking-layout { grid-template-columns: 1fr; }
-  .booking-photo { height: auto; aspect-ratio: 4 / 3; }
+@media (min-width: 480px) { .form-pair { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (min-width: 701px) {
+  .booking-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .booking-photo { height: clamp(29rem, 73vh, 56rem); aspect-ratio: auto; }
 }
 
 .reservation-page .secondary {
@@ -51,3 +52,6 @@ dialog::backdrop { background: rgb(18 30 22 / 70%); }
   color: #313f38; background: transparent; font: inherit; cursor: pointer;
 }
 #booking-status, #payment-message { line-height: 1.5; margin-top: 1rem; }
+
+.close { flex-shrink: 0; }
+.total { flex-wrap: wrap; }

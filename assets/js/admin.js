@@ -66,7 +66,9 @@ async function checkAdminAccess() {
 function previewImage() {
   // A local filename only; never render markup from database content.
   const filename = adminById("edit-image").value;
-  adminById("image-preview").src = "assets/img/" + encodeURIComponent(filename);
+  const photo = adminById("image-preview");
+  photo.onerror = () => { photo.onerror = null; photo.src = globalThis.HotelImages ? HotelImages.url("hero.png", hotelRoot) : "assets/img/hero.png"; };
+  photo.src = globalThis.HotelImages ? HotelImages.url(filename, hotelRoot) : "assets/img/" + encodeURIComponent(filename);
 }
 function openEditor(room = null) {
   if (!adminUserId || adminBusy) return;

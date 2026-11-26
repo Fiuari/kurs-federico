@@ -31,3 +31,7 @@
 #edit-active { accent-color: #313f38; width: 1.2rem; height: 1.2rem; }
 .admin-preview { margin-top: .75rem; width: 100%; height: 9rem; object-fit: cover; }
 #editor-status, #delete-status { margin-top: 1rem; }
+
+.admin-page table { min-width: 36rem; }
+.editor-actions { flex-wrap: wrap; }
+.editor-heading h2 { min-width: 0; }
